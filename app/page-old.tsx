@@ -3,13 +3,13 @@
 import { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import BeforeAfter from './components/BeforeAfter';
+import BeforeAfter from './sections/BeforeAfter';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
-  const backgroundRef = useRef<HTMLDivElement>(null);
+  const backgroundRef = useRef<HTMLVideoElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const subheadlineRef = useRef<HTMLParagraphElement>(null);
   const buttonsRef = useRef<HTMLDivElement>(null);
@@ -33,9 +33,16 @@ export default function Home() {
 
       // Set initial states
       gsap.set(backgroundRef.current, { opacity: 0, scale: 1.1 });
-      gsap.set(headlineRef.current?.querySelectorAll('span span'), { y: '100%' });
+      if (headlineRef.current) {
+        const spans = headlineRef.current.querySelectorAll('span span');
+        if (spans.length > 0) {
+          gsap.set(Array.from(spans), { y: '100%' });
+        }
+      }
       gsap.set(subheadlineRef.current, { opacity: 0, y: 30 });
-      gsap.set(buttonsRef.current?.children, { opacity: 0, y: 20 });
+      if (buttonsRef.current?.children) {
+        gsap.set(Array.from(buttonsRef.current.children), { opacity: 0, y: 20 });
+      }
 
       // Create timeline for entrance animations
       const tl = gsap.timeline({ delay: 0.5 });
@@ -49,12 +56,17 @@ export default function Home() {
       });
 
       // Staggered headline words animation
-      tl.to(headlineRef.current?.querySelectorAll('span span'), {
-        y: '0%',
-        duration: 1.2,
-        stagger: 0.08,
-        ease: 'power3.out'
-      }, '-=1.5');
+      if (headlineRef.current) {
+        const spans = headlineRef.current.querySelectorAll('span span');
+        if (spans.length > 0) {
+          tl.to(Array.from(spans), {
+            y: '0%',
+            duration: 1.2,
+            stagger: 0.08,
+            ease: 'power3.out'
+          }, '-=1.5');
+        }
+      }
 
       // Subheadline animation
       tl.to(subheadlineRef.current, {
@@ -65,13 +77,15 @@ export default function Home() {
       }, '-=0.6');
 
       // Buttons animation
-      tl.to(buttonsRef.current?.children, {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'power2.out'
-      }, '-=0.4');
+      if (buttonsRef.current?.children) {
+        tl.to(Array.from(buttonsRef.current.children), {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power2.out'
+        }, '-=0.4');
+      }
 
       // Parallax scroll effect for background
       ScrollTrigger.create({

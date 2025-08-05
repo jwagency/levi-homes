@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
-  const backgroundRef = useRef<HTMLDivElement>(null);
+  const backgroundRef = useRef<HTMLVideoElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const subheadlineRef = useRef<HTMLParagraphElement>(null);
   const buttonsRef = useRef<HTMLDivElement>(null);
@@ -27,7 +27,9 @@ export default function Hero() {
       gsap.set(backgroundRef.current, { opacity: 0, scale: 1.1 });
       gsap.set(wordElements, { y: '100%', opacity: 0 });
       gsap.set(subheadlineRef.current, { opacity: 0, y: 30 });
-      gsap.set(buttonsRef.current?.children, { opacity: 0, y: 20 });
+      if (buttonsRef.current?.children) {
+        gsap.set(Array.from(buttonsRef.current.children), { opacity: 0, y: 20 });
+      }
 
       // Create timeline for entrance animations
       const tl = gsap.timeline({ delay: 0.5 });
@@ -58,13 +60,15 @@ export default function Hero() {
       }, '-=0.6');
 
       // Buttons animation
-      tl.to(buttonsRef.current?.children, {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'power2.out'
-      }, '-=0.4');
+      if (buttonsRef.current?.children) {
+        tl.to(Array.from(buttonsRef.current.children), {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power2.out'
+        }, '-=0.4');
+      }
 
       // Parallax scroll effect for background
       ScrollTrigger.create({

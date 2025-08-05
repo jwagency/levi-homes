@@ -32,6 +32,11 @@ export default function Home2() {
   const contactSubtitleRef = useRef<HTMLParagraphElement>(null);
 
   useLayoutEffect(() => {
+    // Configure ScrollTrigger to prevent double scrollbars
+    ScrollTrigger.config({
+      autoRefreshEvents: "visibilitychange,DOMContentLoaded,load"
+    });
+    
     const ctx = gsap.context(() => {
       // Split title text into words
       const title = titleRef.current;
@@ -60,9 +65,8 @@ export default function Home2() {
         start: 'top top',
         end: '+=200vh',
         pin: true,
-        pinSpacing: false,
+        pinSpacing: true,
         scrub: 0.5,
-        ease: 'none',
         onUpdate: (self) => {
           const progress = self.progress;
           
@@ -90,14 +94,16 @@ export default function Home2() {
             borderRadius = 24 - (phase1Progress * 24);
             
             // Reset container during first phase
-            gsap.set(videoContainerRef.current?.parentElement, {
-              position: 'relative',
-              top: 'auto',
-              left: 'auto',
-              width: '100%',
-              height: 'auto',
-              zIndex: 'auto'
-            });
+            if (videoContainerRef.current?.parentElement) {
+              gsap.set(videoContainerRef.current.parentElement, {
+                position: 'relative',
+                top: 'auto',
+                left: 'auto',
+                width: '100%',
+                height: 'auto',
+                zIndex: 'auto'
+              });
+            }
             
             gsap.set(videoContainerRef.current, {
               width: '100%',
@@ -111,14 +117,16 @@ export default function Home2() {
             borderRadius = 0;
             
             // Expand to full viewport during this phase
-            gsap.set(videoContainerRef.current?.parentElement, {
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              width: '100vw',
-              height: '100vh',
-              zIndex: 1
-            });
+            if (videoContainerRef.current?.parentElement) {
+              gsap.set(videoContainerRef.current.parentElement, {
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100vw',
+                height: '100vh',
+                zIndex: 1
+              });
+            }
             
             gsap.set(videoContainerRef.current, {
               width: '100%',
@@ -134,14 +142,16 @@ export default function Home2() {
         },
         onLeave: () => {
           // Keep video as fixed background when leaving the pinned section
-          gsap.set(videoContainerRef.current?.parentElement, {
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh',
-            zIndex: 1
-          });
+          if (videoContainerRef.current?.parentElement) {
+            gsap.set(videoContainerRef.current.parentElement, {
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100vw',
+              height: '100vh',
+              zIndex: 1
+            });
+          }
         },
         onEnterBack: () => {
           // Reset everything when scrolling back into the pinned section
@@ -150,14 +160,16 @@ export default function Home2() {
             opacity: 1
           });
           
-          gsap.set(videoContainerRef.current?.parentElement, {
-            position: 'relative',
-            top: 'auto',
-            left: 'auto',
-            width: '100%',
-            height: 'auto',
-            zIndex: 'auto'
-          });
+          if (videoContainerRef.current?.parentElement) {
+            gsap.set(videoContainerRef.current.parentElement, {
+              position: 'relative',
+              top: 'auto',
+              left: 'auto',
+              width: '100%',
+              height: 'auto',
+              zIndex: 'auto'
+            });
+          }
           
           gsap.set(videoContainerRef.current, {
             scale: 1.0,
@@ -289,52 +301,52 @@ export default function Home2() {
         }
       });
 
-      // Testimonials section animations
-      ScrollTrigger.create({
-        trigger: testimonialsRef.current,
-        start: 'top 80%',
-        onEnter: () => {
-          // Split testimonials title into words
-          const testimorialsTitle = testimonialsTitleRef.current;
-          let testimonialsTitleWords: HTMLElement[] = [];
-          if (testimorialsTitle) {
-            testimonialsTitleWords = splitTextIntoWords(testimorialsTitle);
-          }
+      // Testimonials section animations - disabled to prevent React DOM conflicts
+      // ScrollTrigger.create({
+      //   trigger: testimonialsRef.current,
+      //   start: 'top 80%',
+      //   onEnter: () => {
+      //     // Split testimonials title into words
+      //     const testimorialsTitle = testimonialsTitleRef.current;
+      //     let testimonialsTitleWords: HTMLElement[] = [];
+      //     if (testimorialsTitle) {
+      //       testimonialsTitleWords = splitTextIntoWords(testimorialsTitle);
+      //     }
 
-          // Set initial states
-          gsap.set(testimonialsTitleWords, { y: '100%', opacity: 0 });
-          gsap.set(testimonialsSubtitleRef.current, { y: 24, opacity: 0 });
-          gsap.set('.testimonial-card', { y: 40, opacity: 0 });
+      //     // Set initial states
+      //     gsap.set(testimonialsTitleWords, { y: '100%', opacity: 0 });
+      //     gsap.set(testimonialsSubtitleRef.current, { y: 24, opacity: 0 });
+      //     gsap.set('.testimonial-card', { y: 40, opacity: 0 });
 
-          // Animate title words
-          gsap.to(testimonialsTitleWords, {
-            y: '0%',
-            opacity: 1,
-            duration: 0.8,
-            stagger: 0.1,
-            ease: 'power3.out'
-          });
+      //     // Animate title words
+      //     gsap.to(testimonialsTitleWords, {
+      //       y: '0%',
+      //       opacity: 1,
+      //       duration: 0.8,
+      //       stagger: 0.1,
+      //       ease: 'power3.out'
+      //     });
 
-          // Animate subtitle
-          gsap.to(testimonialsSubtitleRef.current, {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            delay: 0.4,
-            ease: 'power2.out'
-          });
+      //     // Animate subtitle
+      //     gsap.to(testimonialsSubtitleRef.current, {
+      //       y: 0,
+      //       opacity: 1,
+      //       duration: 1,
+      //       delay: 0.4,
+      //       ease: 'power2.out'
+      //     });
 
-          // Animate testimonial cards
-          gsap.to('.testimonial-card', {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            stagger: 0.15,
-            delay: 0.6,
-            ease: 'power2.out'
-          });
-        }
-      });
+      //     // Animate testimonial cards
+      //     gsap.to('.testimonial-card', {
+      //       y: 0,
+      //       opacity: 1,
+      //       duration: 0.8,
+      //       stagger: 0.15,
+      //       delay: 0.6,
+      //       ease: 'power2.out'
+      //     });
+      //   }
+      // });
 
       // Contact section animations - disabled to prevent React DOM conflicts
       // ScrollTrigger.create({
@@ -398,7 +410,7 @@ export default function Home2() {
   }, []);
 
   return (
-    <div ref={heroRef} className="bg-white overflow-x-hidden">
+    <div ref={heroRef} className="bg-white">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 p-8">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -801,7 +813,7 @@ export default function Home2() {
       </section>
 
       {/* Testimonials Section */}
-      <section ref={testimonialsRef} id="testimonials" className="min-h-screen bg-[#F8F7F5] text-[#0E0E0E] relative z-10 py-24">
+      <section ref={testimonialsRef} id="testimonials" className="min-h-screen bg-[#F8F7F5] text-[#0E0E0E] relative z-10 pt-24 pb-0">
         <div className="max-w-6xl mx-auto px-8">
           {/* Section Header */}
           <div className="text-center mb-20">
@@ -874,7 +886,105 @@ export default function Home2() {
             </div>
 
           </div>
+        </div>
+      </section>
 
+      {/* Full Width Image Carousel */}
+      <section className="pt-0 pb-6 overflow-hidden bg-gray-50">
+        <div className="flex animate-scroll gap-6">
+                {/* Image Set 1 */}
+                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                  <img 
+                    src="/images/showcase/ferris-1.jpg" 
+                    alt="Luxury Kitchen Renovation" 
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                  <img 
+                    src="/images/showcase/how-much-does-full-house-renovation-cost.jpg" 
+                    alt="Modern Bathroom Design" 
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                  <img 
+                    src="/images/showcase/neo-classic-tv-area-600x452.jpg" 
+                    alt="Living Room Transformation" 
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                  <img 
+                    src="/images/showcase/5aa8034dea685964b380ef0a17bff7a6.jpg" 
+                    alt="Luxury Master Suite" 
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                  <img 
+                    src="/images/showcase/Screen-Shot-2019-08-09-at-11.15.51-AM.jpg" 
+                    alt="Custom Home Addition" 
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                  <img 
+                    src="/images/showcase/Million Dollar Listing–Los Angeles.jpeg" 
+                    alt="High-End Renovation" 
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                
+                {/* Duplicate set for seamless loop */}
+                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                  <img 
+                    src="/images/showcase/ferris-1.jpg" 
+                    alt="Luxury Kitchen Renovation" 
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                  <img 
+                    src="/images/showcase/how-much-does-full-house-renovation-cost.jpg" 
+                    alt="Modern Bathroom Design" 
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                  <img 
+                    src="/images/showcase/neo-classic-tv-area-600x452.jpg" 
+                    alt="Living Room Transformation" 
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                  <img 
+                    src="/images/showcase/5aa8034dea685964b380ef0a17bff7a6.jpg" 
+                    alt="Luxury Master Suite" 
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                  <img 
+                    src="/images/showcase/Screen-Shot-2019-08-09-at-11.15.51-AM.jpg" 
+                    alt="Custom Home Addition" 
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                  <img 
+                    src="/images/showcase/Million Dollar Listing–Los Angeles.jpeg" 
+                    alt="High-End Renovation" 
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+        </div>
+      </section>
+
+      {/* Testimonials CTA Section */}
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-8">
           {/* Call to Action */}
           <div className="text-center mt-24">
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
