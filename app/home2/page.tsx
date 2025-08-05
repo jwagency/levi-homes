@@ -813,180 +813,101 @@ export default function Home2() {
       </section>
 
       {/* Testimonials Section */}
-      <section ref={testimonialsRef} id="testimonials" className="min-h-screen bg-[#F8F7F5] text-[#0E0E0E] relative z-10 pt-24 pb-0">
-        <div className="max-w-6xl mx-auto px-8">
-          {/* Section Header */}
-          <div className="text-center mb-20">
-            <div className="mb-4">
-              <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">Client Stories</span>
+      <section ref={testimonialsRef} id="testimonials" className="bg-[#F8F7F5] text-[#0E0E0E] relative z-10 pt-24 pb-5">
+        <div className="max-w-6xl mx-auto px-8 pb-0 -mb-24">
+          {/* Section Header with Background Images */}
+          <div className="relative mb-20">
+            {/* Decorative Background Images */}
+            <div className="absolute inset-0 -mx-8 overflow-hidden opacity-10">
+              <div className="absolute top-0 left-8 w-32 h-24 rounded-lg overflow-hidden">
+                <img src="/images/showcase/ferris-1.jpg" alt="" className="w-full h-full object-cover" />
+              </div>
+              <div className="absolute top-12 right-12 w-28 h-20 rounded-lg overflow-hidden">
+                <img src="/images/showcase/neo-classic-tv-area-600x452.jpg" alt="" className="w-full h-full object-cover" />
+              </div>
+              <div className="absolute bottom-8 left-16 w-24 h-18 rounded-lg overflow-hidden">
+                <img src="/images/showcase/5aa8034dea685964b380ef0a17bff7a6.jpg" alt="" className="w-full h-full object-cover" />
+              </div>
+              <div className="absolute bottom-4 right-8 w-36 h-24 rounded-lg overflow-hidden">
+                <img src="/images/showcase/Million Dollar Listing–Los Angeles.jpeg" alt="" className="w-full h-full object-cover" />
+              </div>
             </div>
-            <h2 
-              ref={testimonialsTitleRef}
-              className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold mb-8 text-[#0E0E0E]"
-            >
-              What Our Clients Are Saying
-            </h2>
-            <p 
-              ref={testimonialsSubtitleRef}
-              className="font-sans text-lg md:text-xl text-[#0E0E0E]/80 leading-relaxed max-w-4xl mx-auto"
-            >
-              Real homeowners. Real transformations. Real praise.
-            </p>
+
+            {/* Header Content */}
+            <div className="text-center relative z-10">
+              <div className="mb-4">
+                <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">Client Stories</span>
+              </div>
+              <h2 
+                ref={testimonialsTitleRef}
+                className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold mb-8 text-[#0E0E0E]"
+              >
+                What Our Clients Are Saying
+              </h2>
+              <p 
+                ref={testimonialsSubtitleRef}
+                className="font-sans text-lg md:text-xl text-[#0E0E0E]/80 leading-relaxed max-w-4xl mx-auto"
+              >
+                Real homeowners. Real transformations. Real praise.
+              </p>
+            </div>
           </div>
 
           {/* Testimonial Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 -mb-24">
             
             {/* Testimonial 1 */}
-            <div className="testimonial-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group">
-              <div className="mb-6">
+            <div className="testimonial-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group h-96 flex flex-col">
+              <div className="flex-1">
                 <div className="w-16 h-16 bg-gray-200 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
-                  <img src="/avatars/client1.jpg" alt="Sarah Chen" className="w-full h-full object-cover" />
+                  <img src="https://images.unsplash.com/photo-1494790108755-2616b612b77c?w=400&h=400&fit=crop&crop=face" alt="Sarah Chen" className="w-full h-full object-cover" />
                 </div>
                 <blockquote className="font-serif text-lg text-[#0E0E0E] italic leading-relaxed mb-4">
                   "Levi Homes transformed our dated kitchen into the heart of our home. Their attention to detail and craftsmanship exceeded every expectation we had."
                 </blockquote>
               </div>
-              <div>
+              <div className="mt-auto">
                 <h3 className="font-sans font-semibold text-[#0E0E0E] text-base mb-1">Sarah Chen</h3>
                 <p className="font-sans text-sm text-[#0E0E0E]/60">Frisco, TX</p>
               </div>
             </div>
 
             {/* Testimonial 2 */}
-            <div className="testimonial-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group">
-              <div className="mb-6">
+            <div className="testimonial-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group h-96 flex flex-col">
+              <div className="flex-1">
                 <div className="w-16 h-16 bg-gray-200 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
-                  <img src="/avatars/client2.jpg" alt="Michael Rodriguez" className="w-full h-full object-cover" />
+                  <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" alt="Michael Rodriguez" className="w-full h-full object-cover" />
                 </div>
                 <blockquote className="font-serif text-lg text-[#0E0E0E] italic leading-relaxed mb-4">
                   "From concept to completion, the Levi Homes team delivered luxury at every turn. Our master bathroom renovation is nothing short of spectacular."
                 </blockquote>
               </div>
-              <div>
+              <div className="mt-auto">
                 <h3 className="font-sans font-semibold text-[#0E0E0E] text-base mb-1">Michael Rodriguez</h3>
                 <p className="font-sans text-sm text-[#0E0E0E]/60">The Woodlands, TX</p>
               </div>
             </div>
 
             {/* Testimonial 3 */}
-            <div className="testimonial-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group">
-              <div className="mb-6">
+            <div className="testimonial-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group h-96 flex flex-col">
+              <div className="flex-1">
                 <div className="w-16 h-16 bg-gray-200 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
-                  <img src="/avatars/client3.jpg" alt="Jennifer Thompson" className="w-full h-full object-cover" />
+                  <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face" alt="Jennifer Thompson" className="w-full h-full object-cover" />
                 </div>
                 <blockquote className="font-serif text-lg text-[#0E0E0E] italic leading-relaxed mb-4">
                   "Professional, punctual, and perfectionist. Levi Homes turned our whole house renovation dreams into reality with unmatched quality and service."
                 </blockquote>
               </div>
-              <div>
+              <div className="mt-auto">
                 <h3 className="font-sans font-semibold text-[#0E0E0E] text-base mb-1">Jennifer Thompson</h3>
                 <p className="font-sans text-sm text-[#0E0E0E]/60">Sugar Land, TX</p>
               </div>
             </div>
 
           </div>
-        </div>
-      </section>
 
-      {/* Full Width Image Carousel */}
-      <section className="pt-0 pb-6 overflow-hidden bg-gray-50">
-        <div className="flex animate-scroll gap-6">
-                {/* Image Set 1 */}
-                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src="/images/showcase/ferris-1.jpg" 
-                    alt="Luxury Kitchen Renovation" 
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src="/images/showcase/how-much-does-full-house-renovation-cost.jpg" 
-                    alt="Modern Bathroom Design" 
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src="/images/showcase/neo-classic-tv-area-600x452.jpg" 
-                    alt="Living Room Transformation" 
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src="/images/showcase/5aa8034dea685964b380ef0a17bff7a6.jpg" 
-                    alt="Luxury Master Suite" 
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src="/images/showcase/Screen-Shot-2019-08-09-at-11.15.51-AM.jpg" 
-                    alt="Custom Home Addition" 
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src="/images/showcase/Million Dollar Listing–Los Angeles.jpeg" 
-                    alt="High-End Renovation" 
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-                
-                {/* Duplicate set for seamless loop */}
-                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src="/images/showcase/ferris-1.jpg" 
-                    alt="Luxury Kitchen Renovation" 
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src="/images/showcase/how-much-does-full-house-renovation-cost.jpg" 
-                    alt="Modern Bathroom Design" 
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src="/images/showcase/neo-classic-tv-area-600x452.jpg" 
-                    alt="Living Room Transformation" 
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src="/images/showcase/5aa8034dea685964b380ef0a17bff7a6.jpg" 
-                    alt="Luxury Master Suite" 
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src="/images/showcase/Screen-Shot-2019-08-09-at-11.15.51-AM.jpg" 
-                    alt="Custom Home Addition" 
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-                <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src="/images/showcase/Million Dollar Listing–Los Angeles.jpeg" 
-                    alt="High-End Renovation" 
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-        </div>
-      </section>
-
-      {/* Testimonials CTA Section */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-8">
           {/* Call to Action */}
-          <div className="text-center mt-24">
+          <div className="text-center mt-48 mb-48">
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a href="tel:+1234567890" className="bg-gradient-to-b from-[#F8B702] via-[#F8B702] to-[#E6A602] text-white px-10 py-4 rounded-[20px] font-medium text-lg transition-all duration-300 hover:from-[#FFD700] hover:to-[#F8B702] hover:scale-105 shadow-lg shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20 before:rounded-[20px]">
                 <FontAwesomeIcon icon={faPhone} className="mr-2" />
@@ -997,8 +918,104 @@ export default function Home2() {
               </a>
             </div>
           </div>
+
         </div>
+
+        {/* Full Width Image Carousel */}
+        <div className="overflow-hidden">
+            <div className="flex animate-scroll gap-6">
+              {/* Image Set 1 */}
+              <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src="/images/showcase/ferris-1.jpg" 
+                  alt="Luxury Kitchen Renovation" 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+              <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src="/images/showcase/how-much-does-full-house-renovation-cost.jpg" 
+                  alt="Modern Bathroom Design" 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+              <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src="/images/showcase/neo-classic-tv-area-600x452.jpg" 
+                  alt="Living Room Transformation" 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+              <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src="/images/showcase/5aa8034dea685964b380ef0a17bff7a6.jpg" 
+                  alt="Luxury Master Suite" 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+              <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src="/images/showcase/Screen-Shot-2019-08-09-at-11.15.51-AM.jpg" 
+                  alt="Custom Home Addition" 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+              <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src="/images/showcase/Million Dollar Listing–Los Angeles.jpeg" 
+                  alt="High-End Renovation" 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+              
+              {/* Duplicate set for seamless loop */}
+              <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src="/images/showcase/ferris-1.jpg" 
+                  alt="Luxury Kitchen Renovation" 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+              <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src="/images/showcase/how-much-does-full-house-renovation-cost.jpg" 
+                  alt="Modern Bathroom Design" 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+              <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src="/images/showcase/neo-classic-tv-area-600x452.jpg" 
+                  alt="Living Room Transformation" 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+              <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src="/images/showcase/5aa8034dea685964b380ef0a17bff7a6.jpg" 
+                  alt="Luxury Master Suite" 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+              <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src="/images/showcase/Screen-Shot-2019-08-09-at-11.15.51-AM.jpg" 
+                  alt="Custom Home Addition" 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+              <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src="/images/showcase/Million Dollar Listing–Los Angeles.jpeg" 
+                  alt="High-End Renovation" 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+            </div>
+          </div>
       </section>
+
+
 
       {/* Contact CTA Section */}
       <section ref={contactRef} id="contact" className="bg-[#0E0E0E] text-white relative z-10 py-20 overflow-hidden">
