@@ -1,11 +1,12 @@
 'use client';
 
-import { useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { splitTextIntoWords } from '../utils/textSplit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComments, faRuler, faHammer, faStar, faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faComments, faRuler, faHammer, faStar, faPhone, faEnvelope, faMapMarkerAlt, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import Footer from '../components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,156 +31,29 @@ export default function Home2() {
   const contactRef = useRef<HTMLDivElement>(null);
   const contactTitleRef = useRef<HTMLHeadingElement>(null);
   const contactSubtitleRef = useRef<HTMLParagraphElement>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useLayoutEffect(() => {
-    // Configure ScrollTrigger to prevent double scrollbars
-    ScrollTrigger.config({
-      autoRefreshEvents: "visibilitychange,DOMContentLoaded,load"
-    });
-    
     const ctx = gsap.context(() => {
-      // Split title text into words
-      const title = titleRef.current;
-      let titleWordElements: HTMLElement[] = [];
-      if (title) {
-        titleWordElements = splitTextIntoWords(title);
-      }
-
-      // Set initial states
-      gsap.set(titleWordElements, { y: '100%', opacity: 0 });
-      gsap.set(videoContainerRef.current, { scale: 1.0, borderRadius: '24px' });
-
-      // Title entrance animation
+      // Simple entrance animation for hero text
       const tl = gsap.timeline({ delay: 0.5 });
-      tl.to(titleWordElements, {
-        y: '0%',
+      
+      // Set initial states
+      gsap.set([titleRef.current, subtitleRef.current], { opacity: 0, y: 30 });
+      
+      // Animate in
+      tl.to(titleRef.current, {
         opacity: 1,
+        y: 0,
         duration: 1,
-        stagger: 0.1,
-        ease: 'power3.out'
-      });
-
-      // Video expansion animation
-      const mainScrollTrigger = ScrollTrigger.create({
-        trigger: heroRef.current,
-        start: 'top top',
-        end: '+=200vh',
-        pin: true,
-        pinSpacing: true,
-        scrub: 0.5,
-        onUpdate: (self) => {
-          const progress = self.progress;
-          
-          // Title and subtitle animation - moves up and fades out
-          if (progress < 0.3) {
-            const titleProgress = progress / 0.3;
-            gsap.set([titleRef.current, subtitleRef.current], {
-              y: -(titleProgress * 150),
-              opacity: 1 - (titleProgress * 0.8)
-            });
-          } else {
-            gsap.set([titleRef.current, subtitleRef.current], {
-              y: -150,
-              opacity: 0.2
-            });
-          }
-          
-          // Video expansion
-          let scale, borderRadius;
-          
-          if (progress < 0.5) {
-            // Gradual expansion
-            const phase1Progress = progress / 0.5;
-            scale = 1.0 + (phase1Progress * 0.2);
-            borderRadius = 24 - (phase1Progress * 24);
-            
-            // Reset container during first phase
-            if (videoContainerRef.current?.parentElement) {
-              gsap.set(videoContainerRef.current.parentElement, {
-                position: 'relative',
-                top: 'auto',
-                left: 'auto',
-                width: '100%',
-                height: 'auto',
-                zIndex: 'auto'
-              });
-            }
-            
-            gsap.set(videoContainerRef.current, {
-              width: '100%',
-              height: '100%',
-              aspectRatio: '16/9'
-            });
-          } else {
-            // Final expansion to fullscreen
-            const phase2Progress = (progress - 0.5) / 0.5;
-            scale = 1.2;
-            borderRadius = 0;
-            
-            // Expand to full viewport during this phase
-            if (videoContainerRef.current?.parentElement) {
-              gsap.set(videoContainerRef.current.parentElement, {
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                width: '100vw',
-                height: '100vh',
-                zIndex: 1
-              });
-            }
-            
-            gsap.set(videoContainerRef.current, {
-              width: '100%',
-              height: '100vh',
-              aspectRatio: 'auto'
-            });
-          }
-          
-          gsap.set(videoContainerRef.current, {
-            scale: scale,
-            borderRadius: `${borderRadius}px`
-          });
-        },
-        onLeave: () => {
-          // Keep video as fixed background when leaving the pinned section
-          if (videoContainerRef.current?.parentElement) {
-            gsap.set(videoContainerRef.current.parentElement, {
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              width: '100vw',
-              height: '100vh',
-              zIndex: 1
-            });
-          }
-        },
-        onEnterBack: () => {
-          // Reset everything when scrolling back into the pinned section
-          gsap.set([titleRef.current, subtitleRef.current], {
-            y: 0,
-            opacity: 1
-          });
-          
-          if (videoContainerRef.current?.parentElement) {
-            gsap.set(videoContainerRef.current.parentElement, {
-              position: 'relative',
-              top: 'auto',
-              left: 'auto',
-              width: '100%',
-              height: 'auto',
-              zIndex: 'auto'
-            });
-          }
-          
-          gsap.set(videoContainerRef.current, {
-            scale: 1.0,
-            borderRadius: '24px',
-            width: '100%',
-            height: '100%',
-            aspectRatio: '16/9'
-          });
-        }
-      });
+        ease: 'power2.out'
+      })
+      .to(subtitleRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out'
+      }, '-=0.5');
 
       // Services section animations
       ScrollTrigger.create({
@@ -412,69 +286,169 @@ export default function Home2() {
   return (
     <div ref={heroRef} className="bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 p-8">
+      <nav className="fixed top-0 left-0 right-0 z-50 py-3 px-8">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <a href="/" className="hover:opacity-75 transition-opacity duration-300">
             <img 
-              src="/images/branding/Levi-Homes_Logo-Black.png" 
+              src="/images/branding/Levi-Homes_Logo-White.png" 
               alt="Levi Homes" 
-              className="h-12 md:h-16 w-auto"
+              className="h-20 md:h-24 w-auto"
             />
           </a>
           <div className="flex items-center gap-8">
-            <a 
-              href="/" 
-              className="text-black/60 hover:text-[#F8B702] transition-colors duration-300 text-sm font-medium tracking-wider"
-            >
-              HOME 1
-            </a>
-            <button className="text-black font-medium text-lg tracking-wider">
-              MENU
-            </button>
+            <div className="relative">
+              <button 
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-white font-medium text-lg tracking-wider flex items-center gap-2 hover:text-[#F8B702] transition-colors duration-300"
+              >
+                MENU
+                <FontAwesomeIcon 
+                  icon={isMenuOpen ? faChevronUp : faChevronDown} 
+                  className="text-sm" 
+                />
+              </button>
+              
+              {/* Full Screen Menu Overlay */}
+              {isMenuOpen && (
+                <div className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex flex-col justify-center items-center">
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setIsMenuOpen(false)}
+                    className="absolute top-8 right-8 text-white hover:text-[#F8B702] transition-colors duration-300 text-2xl"
+                  >
+                    ✕
+                  </button>
+
+                  {/* Menu Content - Two Column Layout */}
+                  <div className="max-w-7xl mx-auto px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32">
+                      {/* Services Column */}
+                      <div className="text-center lg:text-left">
+                        <div className="mb-12">
+                          <span className="text-[#F8B702] text-sm uppercase tracking-[0.3em] font-medium">Services</span>
+                        </div>
+                        <div className="space-y-10">
+                          <a 
+                            href="/services/kitchen-remodeling" 
+                            onClick={() => setIsMenuOpen(false)}
+                            className="block text-white font-bold text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                          >
+                            Kitchen Remodeling
+                          </a>
+                          <a 
+                            href="/services/bathroom-remodeling" 
+                            onClick={() => setIsMenuOpen(false)}
+                            className="block text-white font-bold text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                          >
+                            Bathroom Remodeling
+                          </a>
+                          <a 
+                            href="/services/general-construction" 
+                            onClick={() => setIsMenuOpen(false)}
+                            className="block text-white font-bold text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                          >
+                            General Construction
+                          </a>
+                          <a 
+                            href="/services/room-additions" 
+                            onClick={() => setIsMenuOpen(false)}
+                            className="block text-white font-bold text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                          >
+                            Room Additions
+                          </a>
+                          <a 
+                            href="/services/garage-conversion" 
+                            onClick={() => setIsMenuOpen(false)}
+                            className="block text-white font-bold text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                          >
+                            Garage Conversion
+                          </a>
+                          <a 
+                            href="/services/attic-renovation" 
+                            onClick={() => setIsMenuOpen(false)}
+                            className="block text-white font-bold text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                          >
+                            Attic Renovation
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Company Column */}
+                      <div className="text-center lg:text-left">
+                        <div className="mb-12">
+                          <span className="text-[#F8B702] text-sm uppercase tracking-[0.3em] font-medium">Company</span>
+                        </div>
+                        <div className="space-y-12">
+                          <a 
+                            href="/about" 
+                            onClick={() => setIsMenuOpen(false)}
+                            className="block text-white font-bold text-2xl md:text-3xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                          >
+                            About Us
+                          </a>
+                          <a 
+                            href="/portfolio" 
+                            onClick={() => setIsMenuOpen(false)}
+                            className="block text-white font-bold text-2xl md:text-3xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                          >
+                            Portfolio
+                          </a>
+                          <a 
+                            href="/testimonials" 
+                            onClick={() => setIsMenuOpen(false)}
+                            className="block text-white font-bold text-2xl md:text-3xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                          >
+                            Testimonials
+                          </a>
+                          <a 
+                            href="/contact" 
+                            onClick={() => setIsMenuOpen(false)}
+                            className="block text-white font-bold text-2xl md:text-3xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                          >
+                            Contact
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section - Large Text and Video */}
-      <section className="h-screen flex flex-col justify-start items-center px-2 pt-48 pb-8 overflow-hidden">
-        <div className="text-center w-full mb-8">
+      {/* Hero Section - Full Screen Video Background */}
+      <section ref={heroRef} className="relative h-screen w-full overflow-hidden">
+        {/* Background Video */}
+        <video
+          ref={videoRef}
+          src="/hero-video.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
+
+        {/* Content */}
+        <div className="relative z-20 flex flex-col items-center justify-center h-full px-6 text-center text-white">
           <h1
             ref={titleRef}
-            className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold text-black leading-[0.85] tracking-tight whitespace-nowrap"
+            className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold text-white leading-[0.85] tracking-tight mb-6"
           >
             LUXURY LIVING REFINED
           </h1>
           <p 
             ref={subtitleRef}
-            className="font-sans text-sm md:text-base text-black/60 mt-0.5 mb-2 tracking-wider uppercase font-medium"
+            className="font-sans text-sm md:text-base text-white/80 tracking-wider uppercase font-medium"
           >
             Houston's Premier Home Transformation Specialists
           </p>
-        </div>
-
-        {/* Video Section */}
-        <div ref={videoSectionRef} className="flex-1 flex items-center justify-center w-full px-2">
-          <div 
-            ref={videoContainerRef}
-            className="w-full aspect-video overflow-hidden relative"
-          >
-            <video
-              ref={videoRef}
-              src="/hero-video.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-cover"
-            />
-            
-            {/* Video overlay for branding */}
-            <div className="absolute top-8 left-8">
-              <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">L</span>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -633,37 +607,37 @@ export default function Home2() {
           <div className="w-full px-4">
             <div className="flex flex-col md:flex-row justify-center items-start gap-4 md:gap-4">
               
-              <div className="bg-white rounded-2xl shadow-lg p-4 w-full max-w-[300px] h-96 flex-shrink-0 mx-auto transition-all duration-500 hover:shadow-2xl hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer">
+              <div className="bg-white rounded-2xl shadow-xl shadow-black/25 p-4 w-full max-w-[300px] h-96 flex-shrink-0 mx-auto transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer relative before:absolute before:inset-0 before:rounded-2xl before:shadow-inner before:shadow-white/20 before:pointer-events-none">
                 <img src="/images/showcase/Million Dollar Listing–Los Angeles.jpeg" alt="Kitchen" className="w-full aspect-square object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-500"/>
                 <h4 className="text-lg font-medium text-center mb-2 group-hover:text-[#F8B702] transition-colors duration-300">Kitchen Remodeling</h4>
                 <p className="text-base text-gray-600 text-center">Culinary masterpieces</p>
               </div>
 
-              <div className="bg-white rounded-2xl shadow-lg p-4 w-full max-w-[300px] h-96 flex-shrink-0 mx-auto transition-all duration-500 hover:shadow-2xl hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer md:-translate-y-12">
+              <div className="bg-white rounded-2xl shadow-xl shadow-black/25 p-4 w-full max-w-[300px] h-96 flex-shrink-0 mx-auto transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer md:-translate-y-12 relative before:absolute before:inset-0 before:rounded-2xl before:shadow-inner before:shadow-white/20 before:pointer-events-none">
                 <img src="/images/showcase/Screen-Shot-2019-08-09-at-11.15.51-AM.jpg" alt="Bathroom" className="w-full aspect-square object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-500"/>
                 <h4 className="text-lg font-medium text-center mb-2 group-hover:text-[#F8B702] transition-colors duration-300">Bathroom Remodeling</h4>
                 <p className="text-base text-gray-600 text-center">Luxury spa experiences</p>
               </div>
 
-              <div className="bg-white rounded-2xl shadow-lg p-4 w-full max-w-[300px] h-96 flex-shrink-0 mx-auto transition-all duration-500 hover:shadow-2xl hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer">
+              <div className="bg-white rounded-2xl shadow-xl shadow-black/25 p-4 w-full max-w-[300px] h-96 flex-shrink-0 mx-auto transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer relative before:absolute before:inset-0 before:rounded-2xl before:shadow-inner before:shadow-white/20 before:pointer-events-none">
                 <img src="/images/showcase/5aa8034dea685964b380ef0a17bff7a6.jpg" alt="Construction" className="w-full aspect-square object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-500"/>
                 <h4 className="text-lg font-medium text-center mb-2 group-hover:text-[#F8B702] transition-colors duration-300">General Construction</h4>
                 <p className="text-base text-gray-600 text-center">Dream it, we build it</p>
               </div>
 
-              <div className="bg-white rounded-2xl shadow-lg p-4 w-full max-w-[300px] h-96 flex-shrink-0 mx-auto transition-all duration-500 hover:shadow-2xl hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer md:-translate-y-12">
+              <div className="bg-white rounded-2xl shadow-xl shadow-black/25 p-4 w-full max-w-[300px] h-96 flex-shrink-0 mx-auto transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer md:-translate-y-12 relative before:absolute before:inset-0 before:rounded-2xl before:shadow-inner before:shadow-white/20 before:pointer-events-none">
                 <img src="/images/showcase/ferris-1.jpg" alt="Room Addition" className="w-full aspect-square object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-500"/>
                 <h4 className="text-lg font-medium text-center mb-2 group-hover:text-[#F8B702] transition-colors duration-300">Room Additions</h4>
                 <p className="text-base text-gray-600 text-center">Seamless home additions</p>
               </div>
 
-              <div className="bg-white rounded-2xl shadow-lg p-4 w-full max-w-[300px] h-96 flex-shrink-0 mx-auto transition-all duration-500 hover:shadow-2xl hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer">
+              <div className="bg-white rounded-2xl shadow-xl shadow-black/25 p-4 w-full max-w-[300px] h-96 flex-shrink-0 mx-auto transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer relative before:absolute before:inset-0 before:rounded-2xl before:shadow-inner before:shadow-white/20 before:pointer-events-none">
                 <img src="/images/showcase/neo-classic-tv-area-600x452.jpg" alt="Garage" className="w-full aspect-square object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-500"/>
                 <h4 className="text-lg font-medium text-center mb-2 group-hover:text-[#F8B702] transition-colors duration-300">Garage Conversion</h4>
                 <p className="text-base text-gray-600 text-center">Amazing extra spaces</p>
               </div>
 
-              <div className="bg-white rounded-2xl shadow-lg p-4 w-full max-w-[300px] h-96 flex-shrink-0 mx-auto transition-all duration-500 hover:shadow-2xl hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer md:-translate-y-12">
+              <div className="bg-white rounded-2xl shadow-xl shadow-black/25 p-4 w-full max-w-[300px] h-96 flex-shrink-0 mx-auto transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer md:-translate-y-12 relative before:absolute before:inset-0 before:rounded-2xl before:shadow-inner before:shadow-white/20 before:pointer-events-none">
                 <img src="/images/showcase/how-much-does-full-house-renovation-cost.jpg" alt="Attic" className="w-full aspect-square object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-500"/>
                 <h4 className="text-lg font-medium text-center mb-2 group-hover:text-[#F8B702] transition-colors duration-300">Attic Renovation</h4>
                 <p className="text-base text-gray-600 text-center">Transform unused spaces</p>
@@ -1196,86 +1170,7 @@ export default function Home2() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-black text-white py-16 relative overflow-hidden mb-0">
-        <div className="max-w-7xl mx-auto px-8 relative z-10">
-          {/* Main Footer Content */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
-            
-            {/* Company Info */}
-            <div className="lg:col-span-3">
-              <div className="mb-6">
-                <img 
-                  src="/images/branding/Levi-Homes_Logo-White.png" 
-                  alt="Levi Homes" 
-                  className="h-12 w-auto mb-4"
-                />
-                <p className="text-white/70 leading-relaxed max-w-md">
-                  Houston's premier luxury home remodeling specialists. Transforming visions into extraordinary living spaces with unmatched craftsmanship and attention to detail.
-                </p>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-center text-white/80">
-                  <FontAwesomeIcon icon={faPhone} className="mr-3 text-[#F8B702]" />
-                  <span>(832) 555-0123</span>
-                </div>
-                <div className="flex items-center text-white/80">
-                  <FontAwesomeIcon icon={faEnvelope} className="mr-3 text-[#F8B702]" />
-                  <span>hello@levihomes.com</span>
-                </div>
-                <div className="flex items-start text-white/80">
-                  <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-3 text-[#F8B702] mt-1" />
-                  <span>Houston, TX<br />Serving Greater Houston Area</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Empty space */}
-            <div className="hidden lg:block"></div>
-
-            {/* Services */}
-            <div>
-              <h3 className="font-serif text-xl font-semibold mb-6 text-white">Our Services</h3>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-white/70 hover:text-[#F8B702] transition-colors duration-300">Kitchen Remodeling</a></li>
-                <li><a href="#" className="text-white/70 hover:text-[#F8B702] transition-colors duration-300">Bathroom Renovation</a></li>
-                <li><a href="#" className="text-white/70 hover:text-[#F8B702] transition-colors duration-300">General Construction</a></li>
-                <li><a href="#" className="text-white/70 hover:text-[#F8B702] transition-colors duration-300">Room Additions</a></li>
-                <li><a href="#" className="text-white/70 hover:text-[#F8B702] transition-colors duration-300">Garage Conversion</a></li>
-                <li><a href="#" className="text-white/70 hover:text-[#F8B702] transition-colors duration-300">Attic Renovation</a></li>
-              </ul>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h3 className="font-serif text-xl font-semibold mb-6 text-white">Company</h3>
-              <ul className="space-y-3">
-                <li><a href="#portfolio" className="text-white/70 hover:text-[#F8B702] transition-colors duration-300">Portfolio</a></li>
-                <li><a href="#process" className="text-white/70 hover:text-[#F8B702] transition-colors duration-300">Our Process</a></li>
-                <li><a href="#testimonials" className="text-white/70 hover:text-[#F8B702] transition-colors duration-300">Testimonials</a></li>
-                <li><a href="#contact" className="text-white/70 hover:text-[#F8B702] transition-colors duration-300">Contact</a></li>
-                <li><a href="#" className="text-white/70 hover:text-[#F8B702] transition-colors duration-300">About Us</a></li>
-                <li><a href="#" className="text-white/70 hover:text-[#F8B702] transition-colors duration-300">Careers</a></li>
-              </ul>
-            </div>
-
-          </div>
-
-          {/* Bottom Footer */}
-          <div className="border-t border-white/10 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="text-white/50 text-sm">
-                © 2024 Levi Homes. All rights reserved. | Licensed & Insured
-              </div>
-              <div className="flex space-x-6">
-                <a href="#" className="text-white/50 hover:text-[#F8B702] transition-colors duration-300 text-sm">Privacy Policy</a>
-                <a href="#" className="text-white/50 hover:text-[#F8B702] transition-colors duration-300 text-sm">Terms of Service</a>
-                <a href="#" className="text-white/50 hover:text-[#F8B702] transition-colors duration-300 text-sm">Sitemap</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
