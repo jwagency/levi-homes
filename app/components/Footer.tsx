@@ -22,8 +22,8 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div>
-            <h3 className="font-serif text-lg font-semibold mb-6">Services</h3>
+          <div className="-mt-8">
+            <h3 className="font-serif text-lg font-semibold mb-3">Services</h3>
             <ul className="space-y-3">
               <li><a href="/services/kitchen-remodeling" className="text-white/70 hover:text-[#F8B702] transition-colors duration-300">Kitchen Remodeling</a></li>
               <li><a href="#" className="text-white/70 hover:text-[#F8B702] transition-colors duration-300">Bathroom Remodeling</a></li>
@@ -36,7 +36,7 @@ export default function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 className="font-serif text-lg font-semibold mb-6">Company</h3>
+            <h3 className="font-serif text-lg font-semibold mb-3">Company</h3>
             <ul className="space-y-3">
               <li><a href="/about" className="text-white/70 hover:text-[#F8B702] transition-colors duration-300">About Us</a></li>
               <li><a href="/portfolio" className="text-white/70 hover:text-[#F8B702] transition-colors duration-300">Portfolio</a></li>
@@ -47,7 +47,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-serif text-lg font-semibold mb-6">Contact</h3>
+            <h3 className="font-serif text-lg font-semibold mb-3">Contact</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <FontAwesomeIcon icon={faPhone} className="text-[#F8B702] text-sm mt-1" />

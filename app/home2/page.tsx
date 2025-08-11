@@ -286,20 +286,20 @@ export default function Home2() {
   return (
     <div ref={heroRef} className="bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 py-3 px-8">
+      <nav className="fixed top-0 left-0 right-0 z-50 py-2 sm:py-3 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <a href="/" className="hover:opacity-75 transition-opacity duration-300">
             <img 
               src="/images/branding/Levi-Homes_Logo-White.png" 
               alt="Levi Homes" 
-              className="h-20 md:h-24 w-auto"
+              className="h-16 sm:h-20 md:h-24 w-auto"
             />
           </a>
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-4 sm:gap-8">
             <div className="relative">
               <button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-white font-medium text-lg tracking-wider flex items-center gap-2 hover:text-[#F8B702] transition-colors duration-300"
+                className="text-white font-medium text-base sm:text-lg tracking-wider flex items-center gap-2 hover:text-[#F8B702] transition-colors duration-300"
               >
                 MENU
                 <FontAwesomeIcon 
@@ -436,16 +436,16 @@ export default function Home2() {
         <div className="absolute inset-0 bg-black/40 z-10" />
 
         {/* Content */}
-        <div className="relative z-20 flex flex-col items-center justify-center h-full px-6 text-center text-white">
+        <div className="relative z-20 flex flex-col items-center justify-center h-full px-4 sm:px-6 text-center text-white">
           <h1
             ref={titleRef}
-            className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold text-white leading-[0.85] tracking-tight mb-6"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white leading-[0.85] tracking-tight mb-4 sm:mb-6"
           >
             LUXURY LIVING REFINED
           </h1>
           <p 
             ref={subtitleRef}
-            className="font-sans text-sm md:text-base text-white/80 tracking-wider uppercase font-medium"
+            className="font-sans text-xs sm:text-sm md:text-base text-white/80 tracking-wider uppercase font-medium max-w-xs sm:max-w-none"
           >
             Houston's Premier Home Transformation Specialists
           </p>
@@ -453,20 +453,21 @@ export default function Home2() {
       </section>
 
       {/* Portfolio Section - Where Vision Meets Craftsmanship */}
-      <section ref={portfolioRef} className="min-h-screen bg-black text-white relative z-10 py-24">
-        <div className="max-w-7xl mx-auto px-8">
+      <section ref={portfolioRef} className="min-h-screen bg-black text-white relative z-10 py-12 sm:py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           {/* Section Header */}
-          <div className="text-center mb-20">
-            <div className="mb-4">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20">
+            <div className="mb-3 sm:mb-4">
               <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">Our Portfolio</span>
             </div>
             <h2 
               ref={portfolioTitleRef}
-              className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold mb-8 text-white"
+              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-1 sm:mb-6 md:mb-8 text-white"
+              style={{ fontWeight: 900, textShadow: '0 0 1px currentColor' }}
             >
               Where Vision Meets Craftsmanship
             </h2>
-            <p className="font-sans text-lg md:text-xl text-white/80 leading-relaxed max-w-4xl mx-auto">
+            <p className="font-sans text-base sm:text-lg md:text-xl text-white/80 leading-relaxed max-w-4xl mx-auto px-4 sm:px-0">
               Experience the future of luxury home remodeling in Houston's most prestigious neighborhoods.
             </p>
           </div>
@@ -574,7 +575,7 @@ export default function Home2() {
 
           {/* View More Button */}
           <div className="text-center mt-16">
-            <button className="bg-gradient-to-b from-white via-gray-50 to-gray-100 text-black px-8 py-4 rounded-[20px] font-medium text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-white shadow-lg shadow-black/20 border border-white/30 hover:shadow-lg hover:shadow-[#F8B702]/15 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/20 before:to-white/40 before:rounded-[20px] hover:scale-105">
+            <button className="bg-gradient-to-b from-white via-gray-50 to-gray-100 text-black px-6 sm:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-white shadow-lg shadow-black/20 border border-white/30 hover:shadow-lg hover:shadow-[#F8B702]/15 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/20 before:to-white/40 before:rounded-lg sm:before:rounded-xl hover:scale-105 w-full sm:w-auto">
               View All Projects
             </button>
           </div>
@@ -582,78 +583,101 @@ export default function Home2() {
       </section>
       
       {/* Services Section - Floating Cards */}
-      <section ref={servicesRef} className="min-h-screen bg-gradient-to-b from-white to-gray-50 text-black relative z-10 py-24 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-8 relative">
+      <section ref={servicesRef} className="min-h-screen bg-gradient-to-b from-white to-gray-50 text-black relative z-10 py-12 sm:py-16 md:py-24 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative">
           {/* Section Header */}
-          <div className="text-center mb-20">
-            <div className="mb-4">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20">
+            <div className="mb-3 sm:mb-4">
               <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">What We Do</span>
             </div>
             <h2 
               ref={servicesTitleRef}
-              className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold mb-8 text-black"
+              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-1 sm:mb-6 md:mb-8 text-black"
+              style={{ fontWeight: 900, textShadow: '0 0 1px currentColor' }}
             >
               Our Services
             </h2>
             <p 
               ref={servicesSubtitleRef}
-              className="font-sans text-lg md:text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto"
+              className="font-sans text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto px-4 sm:px-0"
             >
               Transform your vision into reality with our comprehensive luxury home remodeling services.
             </p>
           </div>
 
           {/* Service Cards - REBUILT */}
-          <div className="w-full px-4">
-            <div className="flex flex-col md:flex-row justify-center items-start gap-4 md:gap-4">
-              
-              <div className="bg-white rounded-2xl shadow-xl shadow-black/25 p-4 w-full max-w-[300px] h-96 flex-shrink-0 mx-auto transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer relative before:absolute before:inset-0 before:rounded-2xl before:shadow-inner before:shadow-white/20 before:pointer-events-none">
-                <img src="/images/showcase/Million Dollar Listing–Los Angeles.jpeg" alt="Kitchen" className="w-full aspect-square object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-500"/>
-                <h4 className="text-lg font-medium text-center mb-2 group-hover:text-[#F8B702] transition-colors duration-300">Kitchen Remodeling</h4>
-                <p className="text-base text-gray-600 text-center">Culinary masterpieces</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:flex md:flex-row justify-center items-start gap-8 sm:gap-4 md:gap-4">
+            
+            <div className="bg-white rounded-lg sm:rounded-2xl shadow-xl shadow-black/25 overflow-hidden w-full sm:max-w-[300px] flex-shrink-0 sm:mx-auto transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer relative before:absolute before:inset-0 before:rounded-lg sm:before:rounded-2xl before:shadow-inner before:shadow-white/20 before:pointer-events-none">
+              <div className="relative overflow-hidden" style={{ aspectRatio: '16/10' }}>
+                <img src="/images/showcase/Million Dollar Listing–Los Angeles.jpeg" alt="Kitchen" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
               </div>
-
-              <div className="bg-white rounded-2xl shadow-xl shadow-black/25 p-4 w-full max-w-[300px] h-96 flex-shrink-0 mx-auto transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer md:-translate-y-12 relative before:absolute before:inset-0 before:rounded-2xl before:shadow-inner before:shadow-white/20 before:pointer-events-none">
-                <img src="/images/showcase/Screen-Shot-2019-08-09-at-11.15.51-AM.jpg" alt="Bathroom" className="w-full aspect-square object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-500"/>
-                <h4 className="text-lg font-medium text-center mb-2 group-hover:text-[#F8B702] transition-colors duration-300">Bathroom Remodeling</h4>
-                <p className="text-base text-gray-600 text-center">Luxury spa experiences</p>
+              <div className="p-4 sm:p-4">
+                <h4 className="text-base sm:text-base lg:text-lg font-medium text-center mb-1 sm:mb-2 group-hover:text-[#F8B702] transition-colors duration-300">Kitchen Remodeling</h4>
+                <p className="text-sm sm:text-sm lg:text-base text-gray-600 text-center">Culinary masterpieces</p>
               </div>
-
-              <div className="bg-white rounded-2xl shadow-xl shadow-black/25 p-4 w-full max-w-[300px] h-96 flex-shrink-0 mx-auto transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer relative before:absolute before:inset-0 before:rounded-2xl before:shadow-inner before:shadow-white/20 before:pointer-events-none">
-                <img src="/images/showcase/5aa8034dea685964b380ef0a17bff7a6.jpg" alt="Construction" className="w-full aspect-square object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-500"/>
-                <h4 className="text-lg font-medium text-center mb-2 group-hover:text-[#F8B702] transition-colors duration-300">General Construction</h4>
-                <p className="text-base text-gray-600 text-center">Dream it, we build it</p>
-              </div>
-
-              <div className="bg-white rounded-2xl shadow-xl shadow-black/25 p-4 w-full max-w-[300px] h-96 flex-shrink-0 mx-auto transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer md:-translate-y-12 relative before:absolute before:inset-0 before:rounded-2xl before:shadow-inner before:shadow-white/20 before:pointer-events-none">
-                <img src="/images/showcase/ferris-1.jpg" alt="Room Addition" className="w-full aspect-square object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-500"/>
-                <h4 className="text-lg font-medium text-center mb-2 group-hover:text-[#F8B702] transition-colors duration-300">Room Additions</h4>
-                <p className="text-base text-gray-600 text-center">Seamless home additions</p>
-              </div>
-
-              <div className="bg-white rounded-2xl shadow-xl shadow-black/25 p-4 w-full max-w-[300px] h-96 flex-shrink-0 mx-auto transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer relative before:absolute before:inset-0 before:rounded-2xl before:shadow-inner before:shadow-white/20 before:pointer-events-none">
-                <img src="/images/showcase/neo-classic-tv-area-600x452.jpg" alt="Garage" className="w-full aspect-square object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-500"/>
-                <h4 className="text-lg font-medium text-center mb-2 group-hover:text-[#F8B702] transition-colors duration-300">Garage Conversion</h4>
-                <p className="text-base text-gray-600 text-center">Amazing extra spaces</p>
-              </div>
-
-              <div className="bg-white rounded-2xl shadow-xl shadow-black/25 p-4 w-full max-w-[300px] h-96 flex-shrink-0 mx-auto transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer md:-translate-y-12 relative before:absolute before:inset-0 before:rounded-2xl before:shadow-inner before:shadow-white/20 before:pointer-events-none">
-                <img src="/images/showcase/how-much-does-full-house-renovation-cost.jpg" alt="Attic" className="w-full aspect-square object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-500"/>
-                <h4 className="text-lg font-medium text-center mb-2 group-hover:text-[#F8B702] transition-colors duration-300">Attic Renovation</h4>
-                <p className="text-base text-gray-600 text-center">Transform unused spaces</p>
-              </div>
-
             </div>
+
+            <div className="bg-white rounded-lg sm:rounded-2xl shadow-xl shadow-black/25 overflow-hidden w-full sm:max-w-[300px] flex-shrink-0 sm:mx-auto transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer sm:md:-translate-y-12 relative before:absolute before:inset-0 before:rounded-lg sm:before:rounded-2xl before:shadow-inner before:shadow-white/20 before:pointer-events-none">
+              <div className="relative overflow-hidden" style={{ aspectRatio: '16/10' }}>
+                <img src="/images/showcase/Screen-Shot-2019-08-09-at-11.15.51-AM.jpg" alt="Bathroom" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+              </div>
+              <div className="p-4 sm:p-4">
+                <h4 className="text-base sm:text-base lg:text-lg font-medium text-center mb-1 sm:mb-2 group-hover:text-[#F8B702] transition-colors duration-300">Bathroom Remodeling</h4>
+                <p className="text-sm sm:text-sm lg:text-base text-gray-600 text-center">Luxury spa experiences</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg sm:rounded-2xl shadow-xl shadow-black/25 overflow-hidden w-full sm:max-w-[300px] flex-shrink-0 sm:mx-auto transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer relative before:absolute before:inset-0 before:rounded-lg sm:before:rounded-2xl before:shadow-inner before:shadow-white/20 before:pointer-events-none">
+              <div className="relative overflow-hidden" style={{ aspectRatio: '16/10' }}>
+                <img src="/images/showcase/5aa8034dea685964b380ef0a17bff7a6.jpg" alt="Construction" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+              </div>
+              <div className="p-4 sm:p-4">
+                <h4 className="text-base sm:text-base lg:text-lg font-medium text-center mb-1 sm:mb-2 group-hover:text-[#F8B702] transition-colors duration-300">General Construction</h4>
+                <p className="text-sm sm:text-sm lg:text-base text-gray-600 text-center">Dream it, we build it</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg sm:rounded-2xl shadow-xl shadow-black/25 overflow-hidden w-full sm:max-w-[300px] flex-shrink-0 sm:mx-auto transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer sm:md:-translate-y-12 relative before:absolute before:inset-0 before:rounded-lg sm:before:rounded-2xl before:shadow-inner before:shadow-white/20 before:pointer-events-none">
+              <div className="relative overflow-hidden" style={{ aspectRatio: '16/10' }}>
+                <img src="/images/showcase/ferris-1.jpg" alt="Room Addition" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+              </div>
+              <div className="p-4 sm:p-4">
+                <h4 className="text-base sm:text-base lg:text-lg font-medium text-center mb-1 sm:mb-2 group-hover:text-[#F8B702] transition-colors duration-300">Room Additions</h4>
+                <p className="text-sm sm:text-sm lg:text-base text-gray-600 text-center">Seamless home additions</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg sm:rounded-2xl shadow-xl shadow-black/25 overflow-hidden w-full sm:max-w-[300px] flex-shrink-0 sm:mx-auto transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer relative before:absolute before:inset-0 before:rounded-lg sm:before:rounded-2xl before:shadow-inner before:shadow-white/20 before:pointer-events-none">
+              <div className="relative overflow-hidden" style={{ aspectRatio: '16/10' }}>
+                <img src="/images/showcase/neo-classic-tv-area-600x452.jpg" alt="Garage" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+              </div>
+              <div className="p-4 sm:p-4">
+                <h4 className="text-base sm:text-base lg:text-lg font-medium text-center mb-1 sm:mb-2 group-hover:text-[#F8B702] transition-colors duration-300">Garage Conversion</h4>
+                <p className="text-sm sm:text-sm lg:text-base text-gray-600 text-center">Amazing extra spaces</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg sm:rounded-2xl shadow-xl shadow-black/25 overflow-hidden w-full sm:max-w-[300px] flex-shrink-0 sm:mx-auto transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 hover:scale-105 hover:border-2 hover:border-[#F8B702] group cursor-pointer sm:md:-translate-y-12 relative before:absolute before:inset-0 before:rounded-lg sm:before:rounded-2xl before:shadow-inner before:shadow-white/20 before:pointer-events-none">
+              <div className="relative overflow-hidden" style={{ aspectRatio: '16/10' }}>
+                <img src="/images/showcase/how-much-does-full-house-renovation-cost.jpg" alt="Attic" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+              </div>
+              <div className="p-4 sm:p-4">
+                <h4 className="text-base sm:text-base lg:text-lg font-medium text-center mb-1 sm:mb-2 group-hover:text-[#F8B702] transition-colors duration-300">Attic Renovation</h4>
+                <p className="text-sm sm:text-sm lg:text-base text-gray-600 text-center">Transform unused spaces</p>
+              </div>
+            </div>
+
           </div>
 
           {/* Call to Action */}
-          <div className="text-center mt-24 relative z-20">
+          <div className="text-center mt-12 sm:mt-16 md:mt-24 relative z-20">
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="tel:+1234567890" className="bg-gradient-to-b from-[#F8B702] via-[#F8B702] to-[#E6A602] text-white px-10 py-4 rounded-[20px] font-medium text-lg transition-all duration-300 hover:from-[#FFD700] hover:to-[#F8B702] hover:scale-105 shadow-lg shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20 before:rounded-[20px]">
-<FontAwesomeIcon icon={faPhone} className="mr-2" />
+              <a href="tel:+1234567890" className="bg-gradient-to-b from-[#F8B702] via-[#F8B702] to-[#E6A602] text-white px-6 sm:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#FFD700] hover:to-[#F8B702] hover:scale-105 shadow-lg shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20 before:rounded-lg sm:before:rounded-xl w-full sm:w-auto text-center">
+                <FontAwesomeIcon icon={faPhone} className="mr-2" />
                 Discuss Your Dream Project
               </a>
-              <a href="/contact" className="bg-gradient-to-b from-gray-800 via-black to-gray-900 text-white px-10 py-4 rounded-[20px] font-medium text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-black shadow-lg shadow-black/50 border border-gray-700 hover:shadow-lg hover:shadow-[#F8B702]/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/10 before:to-white/20 before:rounded-[20px] hover:scale-105">
+              <a href="/contact" className="bg-gradient-to-b from-gray-800 via-black to-gray-900 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-black shadow-lg shadow-black/50 border border-gray-700 hover:shadow-lg hover:shadow-[#F8B702]/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/10 before:to-white/20 before:rounded-lg sm:before:rounded-xl hover:scale-105 w-full sm:w-auto text-center">
                 Get Your Custom Proposal
               </a>
             </div>
@@ -662,32 +686,33 @@ export default function Home2() {
       </section>
 
       {/* Process Section */}
-      <section ref={processRef} id="process" className="min-h-screen bg-black text-white relative z-10 py-24 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/AdobeStock_100737957.jpeg)' }}>
+      <section ref={processRef} id="process" className="min-h-screen bg-black text-white relative z-10 py-12 sm:py-16 md:py-24 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/AdobeStock_100737957.jpeg)' }}>
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/70 z-0"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30 z-[1]"></div>
         <div className="max-w-6xl mx-auto px-8 relative z-10">
           {/* Section Header */}
-          <div className="text-center mb-20">
-            <div className="mb-4">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20">
+            <div className="mb-3 sm:mb-4">
               <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">How We Work</span>
             </div>
             <h2 
               ref={processTitleRef}
-              className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold mb-8 text-white"
+              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-1 sm:mb-6 md:mb-8 text-white"
+              style={{ fontWeight: 900, textShadow: '0 0 1px currentColor' }}
             >
               Our Process
             </h2>
             <p 
               ref={processSubtitleRef}
-              className="font-sans text-lg md:text-xl text-white/80 leading-relaxed max-w-4xl mx-auto"
+              className="font-sans text-base sm:text-lg md:text-xl text-white/80 leading-relaxed max-w-4xl mx-auto px-4 sm:px-0"
             >
               A proven, collaborative approach—built around you.
             </p>
           </div>
 
           {/* Process Steps */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16">
             
             {/* Step 1 - Consultation */}
             <div className="process-step group cursor-pointer bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-[#F8B702]/30 transition-all duration-300">
@@ -772,13 +797,13 @@ export default function Home2() {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center mt-24 relative z-20">
+          <div className="text-center mt-12 sm:mt-16 md:mt-24 relative z-20">
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="tel:+1234567890" className="bg-gradient-to-b from-[#F8B702] via-[#F8B702] to-[#E6A602] text-white px-10 py-4 rounded-[20px] font-medium text-lg transition-all duration-300 hover:from-[#FFD700] hover:to-[#F8B702] hover:scale-105 shadow-lg shadow-black/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20 before:rounded-[20px]">
-<FontAwesomeIcon icon={faPhone} className="mr-2" />
+              <a href="tel:+1234567890" className="bg-gradient-to-b from-[#F8B702] via-[#F8B702] to-[#E6A602] text-white px-6 sm:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#FFD700] hover:to-[#F8B702] hover:scale-105 shadow-lg shadow-black/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20 before:rounded-lg sm:before:rounded-xl w-full sm:w-auto text-center">
+                <FontAwesomeIcon icon={faPhone} className="mr-2" />
                 Discuss Your Dream Project
               </a>
-              <a href="/contact" className="bg-gradient-to-b from-white via-gray-50 to-gray-100 text-black px-10 py-4 rounded-[20px] font-medium text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-white shadow-lg shadow-black/30 border border-white/50 hover:shadow-lg hover:shadow-[#F8B702]/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/20 before:to-white/40 before:rounded-[20px] hover:scale-105">
+              <a href="/contact" className="bg-gradient-to-b from-white via-gray-50 to-gray-100 text-black px-6 sm:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-white shadow-lg shadow-black/30 border border-white/50 hover:shadow-lg hover:shadow-[#F8B702]/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/20 before:to-white/40 before:rounded-lg sm:before:rounded-xl hover:scale-105 w-full sm:w-auto text-center">
                 Get Your Custom Proposal
               </a>
             </div>
@@ -789,38 +814,23 @@ export default function Home2() {
       {/* Testimonials Section */}
       <section ref={testimonialsRef} id="testimonials" className="bg-[#F8F7F5] text-[#0E0E0E] relative z-10 pt-24 pb-5">
         <div className="max-w-6xl mx-auto px-8 pb-0 -mb-24">
-          {/* Section Header with Background Images */}
-          <div className="relative mb-20">
-            {/* Decorative Background Images */}
-            <div className="absolute inset-0 -mx-8 overflow-hidden opacity-10">
-              <div className="absolute top-0 left-8 w-32 h-24 rounded-lg overflow-hidden">
-                <img src="/images/showcase/ferris-1.jpg" alt="" className="w-full h-full object-cover" />
-              </div>
-              <div className="absolute top-12 right-12 w-28 h-20 rounded-lg overflow-hidden">
-                <img src="/images/showcase/neo-classic-tv-area-600x452.jpg" alt="" className="w-full h-full object-cover" />
-              </div>
-              <div className="absolute bottom-8 left-16 w-24 h-18 rounded-lg overflow-hidden">
-                <img src="/images/showcase/5aa8034dea685964b380ef0a17bff7a6.jpg" alt="" className="w-full h-full object-cover" />
-              </div>
-              <div className="absolute bottom-4 right-8 w-36 h-24 rounded-lg overflow-hidden">
-                <img src="/images/showcase/Million Dollar Listing–Los Angeles.jpeg" alt="" className="w-full h-full object-cover" />
-              </div>
-            </div>
-
+          {/* Section Header */}
+          <div className="mb-12 sm:mb-16 md:mb-20">
             {/* Header Content */}
-            <div className="text-center relative z-10">
-              <div className="mb-4">
+            <div className="text-center">
+              <div className="mb-3 sm:mb-4">
                 <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">Client Stories</span>
               </div>
               <h2 
                 ref={testimonialsTitleRef}
-                className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold mb-8 text-[#0E0E0E]"
+                className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 sm:mb-6 md:mb-8 text-[#0E0E0E]"
+                style={{ fontWeight: 900, textShadow: '0 0 1px currentColor' }}
               >
                 What Our Clients Are Saying
               </h2>
               <p 
                 ref={testimonialsSubtitleRef}
-                className="font-sans text-lg md:text-xl text-[#0E0E0E]/80 leading-relaxed max-w-4xl mx-auto"
+                className="font-sans text-base sm:text-lg md:text-xl text-[#0E0E0E]/80 leading-relaxed max-w-4xl mx-auto px-4 sm:px-0"
               >
                 Real homeowners. Real transformations. Real praise.
               </p>
@@ -828,7 +838,7 @@ export default function Home2() {
           </div>
 
           {/* Testimonial Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 -mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             {/* Testimonial 1 */}
             <div className="testimonial-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group h-96 flex flex-col">
@@ -881,13 +891,13 @@ export default function Home2() {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center mt-48 mb-48">
+          <div className="text-center mt-12 sm:mt-16 md:mt-24 mb-48">
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="tel:+1234567890" className="bg-gradient-to-b from-[#F8B702] via-[#F8B702] to-[#E6A602] text-white px-10 py-4 rounded-[20px] font-medium text-lg transition-all duration-300 hover:from-[#FFD700] hover:to-[#F8B702] hover:scale-105 shadow-lg shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20 before:rounded-[20px]">
+              <a href="tel:+1234567890" className="bg-gradient-to-b from-[#F8B702] via-[#F8B702] to-[#E6A602] text-white px-6 sm:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#FFD700] hover:to-[#F8B702] hover:scale-105 shadow-lg shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20 before:rounded-lg sm:before:rounded-xl w-full sm:w-auto text-center">
                 <FontAwesomeIcon icon={faPhone} className="mr-2" />
                 Discuss Your Dream Project
               </a>
-              <a href="/contact" className="bg-gradient-to-b from-white via-gray-50 to-gray-100 text-black px-10 py-4 rounded-[20px] font-medium text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-white shadow-lg shadow-black/20 border border-white/30 hover:shadow-lg hover:shadow-[#F8B702]/15 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/20 before:to-white/40 before:rounded-[20px] hover:scale-105">
+              <a href="/contact" className="bg-gradient-to-b from-gray-800 via-black to-gray-900 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-black shadow-lg shadow-black/50 border border-gray-700 hover:shadow-lg hover:shadow-[#F8B702]/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/10 before:to-white/20 before:rounded-lg sm:before:rounded-xl hover:scale-105 w-full sm:w-auto text-center">
                 Get Your Custom Proposal
               </a>
             </div>
@@ -896,8 +906,78 @@ export default function Home2() {
         </div>
 
         {/* Full Width Image Carousel */}
-        <div className="overflow-hidden">
-            <div className="flex animate-scroll gap-6">
+        <div 
+          className="overflow-x-auto cursor-grab active:cursor-grabbing"
+          style={{
+            scrollBehavior: 'smooth',
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+            WebkitScrollbar: 'none'
+          }}
+          css={{
+            '&::-webkit-scrollbar': {
+              display: 'none'
+            }
+          }}
+          onMouseDown={(e) => {
+            const slider = e.currentTarget;
+            const startX = e.pageX;
+            const scrollLeft = slider.scrollLeft;
+            let isDown = true;
+            
+            // Get the total scroll width and individual image width for loop calculations
+            const totalWidth = slider.scrollWidth;
+            const containerWidth = slider.clientWidth;
+            const halfWidth = totalWidth / 2; // Since we have duplicate images
+            
+            // Temporarily disable smooth scrolling for immediate response
+            slider.style.scrollBehavior = 'auto';
+            
+            const handleMouseMove = (e) => {
+              if (!isDown) return;
+              const x = e.pageX;
+              const walk = (startX - x); // Direct 1:1 mapping for free drag
+              let newScrollLeft = scrollLeft + walk;
+              
+              // Handle infinite loop for dragging
+              if (newScrollLeft >= halfWidth) {
+                newScrollLeft = newScrollLeft - halfWidth;
+              } else if (newScrollLeft < 0) {
+                newScrollLeft = halfWidth + newScrollLeft;
+              }
+              
+              slider.scrollLeft = newScrollLeft;
+            };
+            
+            const handleMouseUp = () => {
+              isDown = false;
+              document.removeEventListener('mousemove', handleMouseMove);
+              document.removeEventListener('mouseup', handleMouseUp);
+              document.removeEventListener('mouseleave', handleMouseLeave);
+              slider.style.cursor = 'grab';
+              slider.style.userSelect = 'auto';
+              slider.style.scrollBehavior = 'smooth'; // Re-enable smooth scrolling
+            };
+            
+            const handleMouseLeave = () => {
+              isDown = false;
+              document.removeEventListener('mousemove', handleMouseMove);
+              document.removeEventListener('mouseup', handleMouseUp);
+              document.removeEventListener('mouseleave', handleMouseLeave);
+              slider.style.cursor = 'grab';
+              slider.style.userSelect = 'auto';
+              slider.style.scrollBehavior = 'smooth';
+            };
+            
+            document.addEventListener('mousemove', handleMouseMove);
+            document.addEventListener('mouseup', handleMouseUp);
+            document.addEventListener('mouseleave', handleMouseLeave);
+            slider.style.cursor = 'grabbing';
+            slider.style.userSelect = 'none';
+            e.preventDefault();
+          }}
+        >
+            <div className="flex gap-6 animate-scroll hover:animate-pause">
               {/* Image Set 1 */}
               <div className="flex-shrink-0 w-96 h-72 rounded-2xl overflow-hidden shadow-xl">
                 <img 
@@ -992,135 +1072,119 @@ export default function Home2() {
 
 
       {/* Contact CTA Section */}
-      <section ref={contactRef} id="contact" className="bg-[#0E0E0E] text-white relative z-10 py-20 overflow-hidden">
+      <section ref={contactRef} id="contact" className="bg-[#0E0E0E] text-white relative z-20 py-12 sm:py-16 overflow-hidden">
         
-        <div className="max-w-7xl mx-auto px-8 relative z-10">
+        {/* Large LEVI HOMES Text Background */}
+        <div className="absolute inset-0 flex items-end justify-center pb-20 sm:pb-28 md:pb-36 z-0">
+          <h2 className="font-serif text-[20vw] sm:text-[18vw] md:text-[15vw] lg:text-[13vw] xl:text-[12vw] font-black text-black leading-[0.8] tracking-[0.1em] sm:tracking-[0.2em] select-none whitespace-nowrap">
+            LEVI HOMES
+          </h2>
+        </div>
+        
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-block mb-8">
-              <span className="text-[#F8B702] text-sm font-semibold tracking-[0.3em] uppercase bg-[#F8B702]/10 px-6 py-2 rounded-full border border-[#F8B702]/20">
-                Get Started Today
-              </span>
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+            <div className="mb-3 sm:mb-4">
+              <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">Get Started Today</span>
             </div>
             <h2 
               ref={contactTitleRef}
-              className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white"
+              className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-1 sm:mb-4 text-white px-4 sm:px-0"
+              style={{ fontWeight: 900, textShadow: '0 0 1px currentColor' }}
             >
               Ready to Transform <span className="text-transparent bg-gradient-to-r from-[#F8B702] to-[#FFD700] bg-clip-text">Your Home?</span>
             </h2>
             <p 
               ref={contactSubtitleRef}
-              className="font-sans text-xl md:text-2xl text-white/80 leading-relaxed"
+              className="font-sans text-base sm:text-lg md:text-xl text-white/80 leading-relaxed px-4 sm:px-0"
             >
               Let's talk about what's possible.
             </p>
           </div>
 
           {/* Content Grid */}
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-16 xl:gap-24 items-start max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-start max-w-5xl mx-auto">
             
             {/* Left Column - Enhanced CTAs */}
-            <div className="space-y-10">
-              {/* Primary CTA Card */}
-              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-3xl p-8 shadow-2xl">
-                <h3 className="text-2xl font-bold text-white mb-4">Start Your Journey</h3>
-                <p className="text-white/70 text-lg mb-6 leading-relaxed">
-                  Ready to discuss your vision? Our design consultations are complimentary and include initial concept development.
-                </p>
-                <a href="/contact" className="bg-gradient-to-r from-[#F8B702] to-[#FFD700] text-black px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-500 hover:shadow-2xl hover:shadow-[#F8B702]/30 hover:scale-105 inline-block relative overflow-hidden group">
-                  <span className="relative z-10">Book Free Consultation</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#FFD700] to-[#F8B702] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-                </a>
-              </div>
+            <div className="flex flex-col items-center justify-center h-full space-y-6 sm:space-y-8 mt-0 sm:mt-2 md:mt-6 lg:mt-10">
               
               {/* Quick Contact Options */}
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4 group cursor-pointer">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#F8B702] to-[#E6A602] rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl group-hover:shadow-[#F8B702]/30 transition-all duration-300 group-hover:scale-110">
-                    <FontAwesomeIcon icon={faPhone} className="text-black text-xl" />
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-center space-x-3 sm:space-x-4 group cursor-pointer">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#F8B702] to-[#E6A602] rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-2xl group-hover:shadow-[#F8B702]/30 transition-all duration-300 group-hover:scale-110">
+                    <FontAwesomeIcon icon={faPhone} className="text-black text-lg sm:text-xl" />
                   </div>
                   <div>
-                    <h4 className="text-white font-semibold text-lg">Call Directly</h4>
-                    <a href="tel:+1234567890" className="text-[#F8B702] text-xl font-bold hover:text-[#FFD700] transition-colors duration-300">
-                      (832) 555-0123
+                    <h4 className="text-white font-semibold text-base sm:text-lg">Call Directly</h4>
+                    <a href="tel:+17139225715" className="text-[#F8B702] text-lg sm:text-xl font-bold hover:text-[#FFD700] transition-colors duration-300">
+                      (713) 922-5715
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4 group cursor-pointer">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#F8B702] to-[#E6A602] rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl group-hover:shadow-[#F8B702]/30 transition-all duration-300 group-hover:scale-110">
-                    <FontAwesomeIcon icon={faEnvelope} className="text-black text-xl" />
+                <div className="flex items-center space-x-3 sm:space-x-4 group cursor-pointer">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#F8B702] to-[#E6A602] rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-2xl group-hover:shadow-[#F8B702]/30 transition-all duration-300 group-hover:scale-110">
+                    <FontAwesomeIcon icon={faEnvelope} className="text-black text-lg sm:text-xl" />
                   </div>
                   <div>
-                    <h4 className="text-white font-semibold text-lg">Email Us</h4>
-                    <a href="mailto:hello@levihomes.com" className="text-[#F8B702] text-xl font-bold hover:text-[#FFD700] transition-colors duration-300">
-                      hello@levihomes.com
+                    <h4 className="text-white font-semibold text-base sm:text-lg">Email Us</h4>
+                    <a href="mailto:levi@levihomes.com" className="text-[#F8B702] text-lg sm:text-xl font-bold hover:text-[#FFD700] transition-colors duration-300 break-all sm:break-normal">
+                      levi@levihomes.com
                     </a>
                   </div>
                 </div>
               </div>
 
-              {/* Trust Indicators */}
-              <div className="grid grid-cols-2 gap-4 pt-6 border-t border-white/10">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#F8B702] mb-1">15+</div>
-                  <div className="text-white/60 text-sm">Years Experience</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#F8B702] mb-1">500+</div>
-                  <div className="text-white/60 text-sm">Homes Transformed</div>
-                </div>
-              </div>
             </div>
 
             {/* Right Column - Enhanced Contact Form */}
-            <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-3xl p-8 shadow-2xl">
-              <div className="mb-8">
-                <h3 className="text-3xl font-bold text-white mb-3">Let's Connect</h3>
-                <p className="text-white/70 text-lg">Tell us about your dream project and we'll make it reality.</p>
+            <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-2xl">
+              <div className="mb-4 sm:mb-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Let's Connect</h3>
+                <p className="text-white/70 text-sm sm:text-base">Tell us about your dream project and we'll make it reality.</p>
               </div>
               
-              <form className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <form className="space-y-4 sm:space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-base font-semibold text-white mb-3">Your Name</label>
+                    <label htmlFor="name" className="block text-sm font-semibold text-white mb-2">Your Name</label>
                     <input 
                       type="text" 
                       id="name" 
                       name="name"
-                      className="w-full px-6 py-5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white font-medium text-lg placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300 hover:bg-white/15"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white font-medium text-sm sm:text-base placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300 hover:bg-white/15"
                       placeholder="John Doe"
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-base font-semibold text-white mb-3">Phone Number</label>
+                    <label htmlFor="phone" className="block text-sm font-semibold text-white mb-2">Phone Number</label>
                     <input 
                       type="tel" 
                       id="phone" 
                       name="phone"
-                      className="w-full px-6 py-5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white font-medium text-lg placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300 hover:bg-white/15"
-                      placeholder="(832) 555-0123"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white font-medium text-sm sm:text-base placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300 hover:bg-white/15"
+                      placeholder="(713) 922-5715"
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-base font-semibold text-white mb-3">Email Address</label>
+                  <label htmlFor="email" className="block text-sm font-semibold text-white mb-2">Email Address</label>
                   <input 
                     type="email" 
                     id="email" 
                     name="email"
-                    className="w-full px-6 py-5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white font-medium text-lg placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300 hover:bg-white/15"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white font-medium text-sm sm:text-base placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300 hover:bg-white/15"
                     placeholder="john@example.com"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="project-type" className="block text-base font-semibold text-white mb-3">Project Type</label>
+                  <label htmlFor="project-type" className="block text-sm font-semibold text-white mb-2">Project Type</label>
                   <select 
                     id="project-type" 
                     name="project-type"
-                    className="w-full px-6 py-5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white font-medium text-lg focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300 hover:bg-white/15"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white font-medium text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300 hover:bg-white/15"
                   >
                     <option value="" className="bg-[#0E0E0E] text-white">Select a project type</option>
                     <option value="kitchen" className="bg-[#0E0E0E] text-white">Kitchen Remodeling</option>
@@ -1132,27 +1196,27 @@ export default function Home2() {
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-base font-semibold text-white mb-3">Project Details</label>
+                  <label htmlFor="message" className="block text-sm font-semibold text-white mb-2">Project Details</label>
                   <textarea 
                     id="message" 
                     name="message"
-                    rows={5}
-                    className="w-full px-6 py-5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white font-medium text-lg placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300 hover:bg-white/15 resize-none"
+                    rows={3}
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white font-medium text-sm sm:text-base placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300 hover:bg-white/15 resize-none"
                     placeholder="Tell us about your vision, timeline, and any specific requirements..."
                   ></textarea>
                 </div>
                 
                 <button 
                   type="submit"
-                  className="w-full bg-gradient-to-r from-[#F8B702] to-[#FFD700] text-black px-8 py-6 rounded-2xl font-bold text-xl transition-all duration-500 hover:shadow-2xl hover:shadow-[#F8B702]/40 hover:scale-[1.02] relative overflow-hidden group"
+                  className="w-full bg-gradient-to-r from-[#F8B702] to-[#FFD700] text-black px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-bold text-base sm:text-lg transition-all duration-500 hover:shadow-2xl hover:shadow-[#F8B702]/40 hover:scale-[1.02] relative overflow-hidden group"
                 >
                   <span className="relative z-10 flex items-center justify-center">
                     Send Message 
-                    <svg className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#FFD700] to-[#F8B702] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#FFD700] to-[#F8B702] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg sm:rounded-xl"></div>
                 </button>
               </form>
             </div>
@@ -1160,15 +1224,6 @@ export default function Home2() {
           </div>
         </div>
       </section>
-
-      {/* Large LEVI Text */}
-      <div className="relative -mb-10 bg-[#0E0E0E] py-2">
-        <div className="flex items-center justify-center">
-          <h2 className="font-serif text-[25vw] md:text-[20vw] lg:text-[18vw] xl:text-[16vw] font-black text-black leading-[0.8] tracking-[0.5em] select-none whitespace-nowrap text-center ml-28">
-            LEVI
-          </h2>
-        </div>
-      </div>
 
       <Footer />
     </div>
