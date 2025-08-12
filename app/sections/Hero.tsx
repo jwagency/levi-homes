@@ -115,10 +115,10 @@ export default function Hero() {
           className="h-12 md:h-16 w-auto"
         />
         <a 
-          href="/home2" 
+          href="/" 
           className="text-white/80 hover:text-[#F8B702] transition-colors duration-300 text-sm font-medium tracking-wider"
         >
-          HOME 2
+          HOME
         </a>
       </div>
 

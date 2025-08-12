@@ -16,7 +16,7 @@ interface NavigationProps {
 export default function Navigation({ 
   showBackButton = false, 
   backText = "BACK TO HOME", 
-  backUrl = "/home2",
+  backUrl = "/",
   showMenu = false,
   logoColor = 'black',
   textColor = 'text-black/60'
@@ -27,7 +27,7 @@ export default function Navigation({
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm py-3 px-6">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <a href="/home2" className="hover:opacity-75 transition-opacity duration-300">
+          <a href="/" className="hover:opacity-75 transition-opacity duration-300">
             <img 
               src={`/images/branding/Levi-Homes_Logo-${logoColor === 'white' ? 'White' : 'Black'}.png`}
               alt="Levi Homes" 

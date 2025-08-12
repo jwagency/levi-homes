@@ -4,13 +4,13 @@ import { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faCheck, faStar, faComments, faRuler, faHammer } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faCheck, faStar, faComments, faRuler, faHammer, faTools } from '@fortawesome/free-solid-svg-icons';
 import Footer from '../../components/Footer';
 import Navigation from '../../components/Navigation';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function KitchenRemodeling() {
+export default function GeneralConstruction() {
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -61,13 +61,13 @@ export default function KitchenRemodeling() {
               ref={titleRef}
               className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-none mb-3"
             >
-              Kitchen Remodeling
+              General Construction
             </h1>
             <p 
               ref={subtitleRef}
               className="font-sans text-xl md:text-2xl text-white/80 leading-relaxed max-w-3xl mx-auto mb-8"
             >
-              Transform your kitchen into the heart of your home with luxury finishes, custom cabinetry, and innovative design solutions.
+              Comprehensive construction services for all your building needs, from structural work to custom builds with expert craftsmanship and attention to detail.
             </p>
             
             {/* CTA Buttons */}
@@ -91,16 +91,16 @@ export default function KitchenRemodeling() {
             {/* Header Content */}
             <div>
               <div className="mb-3 sm:mb-4">
-                <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">Premium Kitchen Design</span>
+                <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">Professional Construction Services</span>
               </div>
               <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-6 text-black" style={{ fontWeight: 900, textShadow: '0 0 1px currentColor' }}>
-                Where Culinary Dreams Come to Life
+                Where Quality Meets Craftsmanship
               </h2>
               <p className="font-sans text-base sm:text-lg md:text-xl text-black/70 leading-relaxed mb-8">
-                Your kitchen is more than just a place to cook—it's where memories are made, conversations flow, and life happens. Our expert team specializes in creating custom kitchen spaces that perfectly blend functionality with stunning aesthetics.
+                From foundation to finish, our general construction services encompass every aspect of building and renovation. We bring decades of experience and unwavering commitment to quality to every project, big or small.
               </p>
               <p className="font-sans text-base sm:text-lg md:text-xl text-black/70 leading-relaxed mb-8">
-                Every kitchen tells a story, and we're here to help you write yours. Our expert team works closely with you to design and build a kitchen that perfectly fits your lifestyle, cooking habits, and aesthetic vision.
+                Whether you need structural work, custom builds, or comprehensive renovations, our skilled team delivers exceptional results that stand the test of time, backed by superior materials and proven techniques.
               </p>
               
               <div>
@@ -116,15 +116,15 @@ export default function KitchenRemodeling() {
               <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="/images/showcase/Million Dollar Listing–Los Angeles.jpeg" 
-                  alt="Luxury Kitchen Design" 
+                  alt="General Construction" 
                   className="w-full h-full object-cover"
                 />
               </div>
               {/* Floating stats card */}
               <div className="absolute -bottom-8 -left-8 bg-white rounded-xl shadow-xl p-6 border border-gray-100">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#F8B702] mb-1">500+</div>
-                  <div className="text-sm text-black/60 font-medium">Kitchens Transformed</div>
+                  <div className="text-3xl font-bold text-[#F8B702] mb-1">400+</div>
+                  <div className="text-sm text-black/60 font-medium">Projects Completed</div>
                 </div>
               </div>
             </div>
@@ -165,10 +165,10 @@ export default function KitchenRemodeling() {
                 <div className="flex-1">
                   <div className="text-[#F8B702] font-bold text-xs uppercase tracking-wider mb-2">01. Consultation</div>
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
-                    Discovery & Vision
+                    Project Assessment
                   </h3>
                   <p className="font-sans text-lg text-white/80 leading-relaxed">
-                    We discuss your vision, lifestyle, and budget to create the perfect kitchen design plan tailored to your needs.
+                    We evaluate your construction needs, site conditions, and develop a comprehensive project plan.
                   </p>
                 </div>
               </div>
@@ -185,10 +185,10 @@ export default function KitchenRemodeling() {
                 <div className="flex-1">
                   <div className="text-[#F8B702] font-bold text-xs uppercase tracking-wider mb-2">02. Design & Planning</div>
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
-                    Blueprint to Reality
+                    Technical Planning
                   </h3>
                   <p className="font-sans text-lg text-white/80 leading-relaxed">
-                    Our designers create detailed plans and 3D renderings of your new kitchen, allowing you to visualize every detail.
+                    Our engineers create detailed construction plans, securing permits and ensuring code compliance.
                   </p>
                 </div>
               </div>
@@ -205,10 +205,10 @@ export default function KitchenRemodeling() {
                 <div className="flex-1">
                   <div className="text-[#F8B702] font-bold text-xs uppercase tracking-wider mb-2">03. Construction</div>
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
-                    Expert Craftsmanship
+                    Professional Execution
                   </h3>
                   <p className="font-sans text-lg text-white/80 leading-relaxed">
-                    Master craftsmen bring your kitchen vision to life with meticulous attention to detail and premium materials.
+                    Skilled tradesmen execute construction with precision, using quality materials and proven methods.
                   </p>
                 </div>
               </div>
@@ -225,10 +225,10 @@ export default function KitchenRemodeling() {
                 <div className="flex-1">
                   <div className="text-[#F8B702] font-bold text-xs uppercase tracking-wider mb-2">04. Completion</div>
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
-                    Your Dream Realized
+                    Quality Assurance
                   </h3>
                   <p className="font-sans text-lg text-white/80 leading-relaxed">
-                    Final walkthrough and quality inspection ensure your complete satisfaction with your transformed kitchen.
+                    Final inspection and walkthrough ensure every detail meets our high standards and your expectations.
                   </p>
                 </div>
               </div>
@@ -259,10 +259,10 @@ export default function KitchenRemodeling() {
               <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">Recent Work</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 sm:mb-5 md:mb-6 text-black" style={{ fontWeight: 900, textShadow: '0 0 1px currentColor' }}>
-              Kitchen Transformations
+              Construction Projects
             </h2>
             <p className="font-sans text-base sm:text-lg md:text-xl text-black/70 leading-relaxed max-w-4xl mx-auto px-4 sm:px-0">
-              Discover how we've transformed ordinary kitchens into extraordinary culinary spaces that perfectly blend luxury, functionality, and personal style.
+              Discover our comprehensive construction projects that showcase quality craftsmanship, innovative solutions, and exceptional attention to detail.
             </p>
           </div>
 
@@ -271,26 +271,26 @@ export default function KitchenRemodeling() {
             <div className="group cursor-pointer">
               <div className="aspect-[4/3] rounded-xl overflow-hidden mb-4 shadow-lg">
                 <img 
-                  src="/images/kitchen/kitchen1.jpg" 
-                  alt="Modern Kitchen" 
+                  src="/images/showcase/Million Dollar Listing–Los Angeles.jpeg" 
+                  alt="Custom Build" 
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <h3 className="font-serif text-lg font-semibold text-black mb-2">Modern Luxury Kitchen</h3>
-              <p className="text-black/60 text-sm">Houston, TX • 2024</p>
+              <h3 className="font-serif text-lg font-semibold text-black mb-2">Custom Home Build</h3>
+              <p className="text-black/60 text-sm">Spring, TX • 2024</p>
             </div>
 
             {/* Gallery Item 2 */}
             <div className="group cursor-pointer">
               <div className="aspect-[4/3] rounded-xl overflow-hidden mb-4 shadow-lg">
                 <img 
-                  src="/images/kitchen/kitchen2.jpg" 
-                  alt="Contemporary Kitchen" 
+                  src="/images/showcase/how-much-does-full-house-renovation-cost.jpg" 
+                  alt="Structural Renovation" 
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <h3 className="font-serif text-lg font-semibold text-black mb-2">Contemporary Design</h3>
-              <p className="text-black/60 text-sm">Sugar Land, TX • 2024</p>
+              <h3 className="font-serif text-lg font-semibold text-black mb-2">Structural Renovation</h3>
+              <p className="text-black/60 text-sm">Cypress, TX • 2024</p>
             </div>
 
             {/* Gallery Item 3 */}
@@ -298,18 +298,18 @@ export default function KitchenRemodeling() {
               <div className="aspect-[4/3] rounded-xl overflow-hidden mb-4 shadow-lg">
                 <img 
                   src="/images/showcase/Million Dollar Listing–Los Angeles.jpeg" 
-                  alt="Traditional Kitchen" 
+                  alt="Commercial Build" 
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <h3 className="font-serif text-lg font-semibold text-black mb-2">Classic Elegance</h3>
-              <p className="text-black/60 text-sm">Katy, TX • 2023</p>
+              <h3 className="font-serif text-lg font-semibold text-black mb-2">Commercial Project</h3>
+              <p className="text-black/60 text-sm">Woodlands, TX • 2023</p>
             </div>
           </div>
 
           <div className="text-center mt-16">
             <a href="/portfolio" className="bg-gradient-to-b from-[#F8B702] via-[#F8B702] to-[#E6A602] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#FFD700] hover:to-[#F8B702] hover:scale-105 shadow-lg shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20 before:rounded-lg sm:before:rounded-xl inline-block w-full sm:w-[335px] text-center">
-              View All Kitchen Projects
+              View All Construction Projects
             </a>
           </div>
         </div>
@@ -325,18 +325,18 @@ export default function KitchenRemodeling() {
               ))}
             </div>
             <blockquote className="font-serif text-2xl md:text-3xl text-black italic leading-relaxed mb-8">
-              "Levi Homes transformed our outdated kitchen into a stunning masterpiece. The attention to detail and craftsmanship exceeded all our expectations. We couldn't be happier!"
+              "Levi Homes delivered exceptional construction quality from start to finish. Their professionalism, attention to detail, and commitment to excellence made our project seamless and stress-free."
             </blockquote>
           </div>
           <div className="flex items-center justify-center gap-4">
             <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-[#F8B702] to-[#D4A003] flex items-center justify-center">
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                <span className="text-[#F8B702] font-serif font-bold text-lg">SJ</span>
+                <span className="text-[#F8B702] font-serif font-bold text-lg">RT</span>
               </div>
             </div>
             <div className="text-left">
-              <div className="font-semibold text-black">Sarah Johnson</div>
-              <div className="text-black/60 text-sm">Memorial, TX</div>
+              <div className="font-semibold text-black">Robert Thompson</div>
+              <div className="text-black/60 text-sm">Kingwood, TX</div>
             </div>
           </div>
         </div>
@@ -346,10 +346,10 @@ export default function KitchenRemodeling() {
       <section className="py-12 sm:py-16 md:py-24 bg-[#0E0E0E] text-white">
         <div className="max-w-4xl mx-auto px-8 text-center">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-0 sm:mb-1 md:mb-1" style={{ fontWeight: 900, textShadow: '0 0 1px currentColor' }}>
-            Ready to Transform Your Kitchen?
+            Ready to Start Your Project?
           </h2>
           <p className="font-sans text-base sm:text-lg md:text-xl text-white/80 leading-relaxed mb-12 max-w-2xl mx-auto px-4 sm:px-0">
-            Let's discuss your vision and create the kitchen of your dreams. Schedule your free consultation today.
+            Let's discuss your construction needs and bring your vision to life. Schedule your free consultation today.
           </p>
           <div className="flex flex-col sm:flex-row gap-8 sm:gap-4 md:gap-4 justify-center items-center">
             <a href="tel:+17139225715" className="bg-gradient-to-b from-[#F8B702] via-[#F8B702] to-[#E6A602] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#FFD700] hover:to-[#F8B702] hover:scale-105 shadow-lg shadow-black/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20 before:rounded-lg sm:before:rounded-xl w-full sm:w-[335px] text-center">
