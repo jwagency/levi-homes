@@ -25,7 +25,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
     title: "Modern Luxury Kitchen",
-    category: "Kitchen",
+    category: "Kitchen Remodeling",
     location: "Houston, TX",
     year: "2024",
     image: "/images/kitchen/kitchen1.jpg",
@@ -34,7 +34,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     id: 2,
     title: "Contemporary Kitchen Design",
-    category: "Kitchen",
+    category: "Kitchen Remodeling",
     location: "Sugar Land, TX", 
     year: "2024",
     image: "/images/kitchen/kitchen2.jpg",
@@ -42,43 +42,61 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 3,
-    title: "Luxury Home Renovation",
-    category: "Full Home",
+    title: "Luxury Home Construction",
+    category: "General Construction",
     location: "Katy, TX",
     year: "2023",
     image: "/images/showcase/Million Dollar Listing–Los Angeles.jpeg",
-    description: "Complete home transformation with luxury finishes throughout"
+    description: "Complete home construction with luxury finishes throughout"
   },
   {
     id: 4,
-    title: "Modern Living Space",
-    category: "Living Room",
+    title: "Master Suite Addition",
+    category: "Room Additions",
     location: "Memorial, TX",
     year: "2023",
     image: "/images/showcase/ferris-1.jpg",
-    description: "Open concept living space with contemporary design elements"
+    description: "Beautiful master suite addition with custom design elements"
   },
   {
     id: 5,
-    title: "Elegant Home Exterior",
-    category: "Exterior",
+    title: "Elegant Home Renovation",
+    category: "General Construction",
     location: "River Oaks, TX",
     year: "2023",
     image: "/images/showcase/how-much-does-full-house-renovation-cost.jpg",
-    description: "Stunning exterior renovation with architectural enhancements"
+    description: "Stunning home renovation with architectural enhancements"
   },
   {
     id: 6,
-    title: "Neo-Classic Entertainment Area",
-    category: "Living Room",
+    title: "Luxury Bathroom Remodel",
+    category: "Bathroom Remodeling",
     location: "Bellaire, TX",
     year: "2023",
     image: "/images/showcase/neo-classic-tv-area-600x452.jpg",
-    description: "Sophisticated entertainment space with neo-classic styling"
+    description: "Sophisticated bathroom remodel with neo-classic styling"
+  },
+  {
+    id: 7,
+    title: "Garage to Living Space",
+    category: "Garage Conversion",
+    location: "The Woodlands, TX",
+    year: "2023",
+    image: "/images/showcase/5aa8034dea685964b380ef0a17bff7a6.jpg",
+    description: "Converted garage into beautiful living space"
+  },
+  {
+    id: 8,
+    title: "Attic Master Suite",
+    category: "Attic Renovation",
+    location: "Pearland, TX",
+    year: "2023",
+    image: "/images/showcase/Screen-Shot-2019-08-09-at-11.15.51-AM.jpg",
+    description: "Transformed attic into stunning master suite"
   }
 ];
 
-const categories = ['All', 'Kitchen', 'Living Room', 'Full Home', 'Exterior'];
+const categories = ['All', 'Kitchen Remodeling', 'Bathroom Remodeling', 'General Construction', 'Room Additions', 'Garage Conversion', 'Attic Renovation'];
 
 export default function Portfolio() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -190,12 +208,12 @@ export default function Portfolio() {
             </h2>
             
             {/* Filter Buttons */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <div className="flex flex-wrap justify-center gap-2 mb-12">
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-3 rounded-full font-medium text-sm uppercase tracking-wider transition-all duration-300 ${
+                  className={`px-3 py-2 rounded-full font-medium text-xs uppercase tracking-wider transition-all duration-300 whitespace-nowrap ${
                     selectedCategory === category
                       ? 'bg-[#F8B702] text-white shadow-lg'
                       : 'bg-gray-100 text-gray-700 hover:bg-[#F8B702] hover:text-white'
