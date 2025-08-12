@@ -922,8 +922,7 @@ export default function Home() {
           style={{
             scrollBehavior: 'smooth',
             scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-            WebkitScrollbar: 'none'
+            msOverflowStyle: 'none'
           }}
           css={{
             '&::-webkit-scrollbar': {
