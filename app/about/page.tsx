@@ -60,16 +60,27 @@ export default function About() {
           <div className="max-w-4xl mx-auto text-center">
             <h1
               ref={titleRef}
-              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
+              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-none mb-6"
             >
               Why Levi Homes?
             </h1>
             <p 
               ref={subtitleRef}
-              className="font-sans text-xl md:text-2xl text-white/80 leading-relaxed max-w-3xl mx-auto"
+              className="font-sans text-xl md:text-2xl text-white/80 leading-relaxed max-w-3xl mx-auto mb-8"
             >
               Built on honest principles, determination, family values and passion for building what matters most to our clients.
             </p>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+              <a href="tel:+17139225715" className="bg-gradient-to-b from-[#F8B702] via-[#F8B702] to-[#E6A602] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#FFD700] hover:to-[#F8B702] hover:scale-105 shadow-lg shadow-black/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20 before:rounded-lg sm:before:rounded-xl w-full sm:w-[335px] text-center">
+                <FontAwesomeIcon icon={faPhone} className="mr-2 fa-fw" />
+                Call Us (713) 922-5715
+              </a>
+              <a href="/contact" className="bg-gradient-to-b from-white via-gray-50 to-gray-100 text-black px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-white shadow-lg shadow-black/30 border border-white/50 hover:shadow-lg hover:shadow-[#F8B702]/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/20 before:to-white/40 before:rounded-lg sm:before:rounded-xl hover:scale-105 w-full sm:w-[335px] text-center">
+                Get Your Custom Proposal
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -83,7 +94,7 @@ export default function About() {
               <div className="mb-6">
                 <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">Our Story</span>
               </div>
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-black mb-8 leading-tight">
+              <h2 className="font-serif text-4xl md:text-5xl font-bold text-black mb-8 leading-none">
                 Why Levi Homes?
               </h2>
               <p className="font-sans text-lg text-black/70 leading-relaxed mb-6">
@@ -102,15 +113,26 @@ export default function About() {
               </div>
             </div>
 
-            {/* Image */}
+            {/* Image Composition */}
             <div className="relative">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+              {/* Main larger image */}
+              <div className="aspect-[5/4] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="/images/showcase/ferris-1.jpg" 
                   alt="Levi Homes Team" 
                   className="w-full h-full object-cover"
                 />
               </div>
+              
+              {/* Smaller overlapping image */}
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-xl overflow-hidden shadow-xl border-4 border-white">
+                <img 
+                  src="/images/showcase/Million Dollar Listing–Los Angeles.jpeg" 
+                  alt="Luxury Interior Design" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
             </div>
           </div>
         </div>
@@ -123,7 +145,7 @@ export default function About() {
             <div className="mb-4">
               <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">Watch Our Story</span>
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6 leading-none">
               Meet The Levi Homes Team
             </h2>
             <p className="font-sans text-lg text-white/80 leading-relaxed max-w-3xl mx-auto">
@@ -171,7 +193,7 @@ export default function About() {
             <div className="mb-3 sm:mb-4">
               <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">Our Values</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-0 sm:mb-1 md:mb-1 text-white" style={{ fontWeight: 900, textShadow: '0 0 1px currentColor' }}>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6 leading-none">
               What Sets Us Apart
             </h2>
             <p className="font-sans text-base sm:text-lg md:text-xl text-white/80 leading-relaxed max-w-4xl mx-auto px-4 sm:px-0">
@@ -288,7 +310,7 @@ export default function About() {
               <div className="mb-6">
                 <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">Professional Help</span>
               </div>
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-black mb-8 leading-tight">
+              <h2 className="font-serif text-4xl md:text-5xl font-bold text-black mb-8 leading-none">
                 Let Us Take The Worry Out Of Your Next Project
               </h2>
               <p className="font-sans text-lg text-black/70 leading-relaxed mb-8">
@@ -305,11 +327,11 @@ export default function About() {
 
             {/* Image */}
             <div className="relative">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/images/showcase/Million Dollar Listing–Los Angeles.jpeg" 
+                  src="/images/showcase/neo-classic-tv-area-600x452.jpg" 
                   alt="Professional Construction Team" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto object-contain"
                 />
               </div>
               {/* Floating stats card */}

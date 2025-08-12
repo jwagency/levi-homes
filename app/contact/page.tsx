@@ -60,7 +60,7 @@ export default function Contact() {
           <div className="max-w-4xl mx-auto text-center">
             <h1
               ref={titleRef}
-              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-3"
+              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-none mb-3"
             >
               Let's Build Your Dream
             </h1>

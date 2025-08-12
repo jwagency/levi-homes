@@ -131,7 +131,7 @@ export default function Home() {
       // Process section animations
       ScrollTrigger.create({
         trigger: processRef.current,
-        start: 'top 95%',
+        start: 'top bottom',
         onEnter: () => {
           // Split process title into words
           const processTitle = processTitleRef.current;
@@ -473,7 +473,7 @@ export default function Home() {
             </div>
             <h2 
               ref={portfolioTitleRef}
-              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-0 sm:mb-1 md:mb-1 text-white"
+              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-0 sm:mb-1 md:mb-1 text-white leading-none"
               style={{ fontWeight: 900, textShadow: '0 0 1px currentColor' }}
             >
               Where Vision Meets Craftsmanship
@@ -603,7 +603,7 @@ export default function Home() {
             </div>
             <h2 
               ref={servicesTitleRef}
-              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-0 sm:mb-1 md:mb-1 text-black"
+              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-0 sm:mb-1 md:mb-1 text-black leading-none"
               style={{ fontWeight: 900, textShadow: '0 0 1px currentColor' }}
             >
               Our Services
@@ -709,7 +709,7 @@ export default function Home() {
             </div>
             <h2 
               ref={processTitleRef}
-              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-0 sm:mb-1 md:mb-1 text-white"
+              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-0 sm:mb-1 md:mb-1 text-white leading-none"
               style={{ fontWeight: 900, textShadow: '0 0 1px currentColor' }}
             >
               Our Process
@@ -834,7 +834,7 @@ export default function Home() {
               </div>
               <h2 
                 ref={testimonialsTitleRef}
-                className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-0 sm:mb-1 md:mb-1 text-[#0E0E0E]"
+                className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-0 sm:mb-1 md:mb-1 text-[#0E0E0E] leading-none"
                 style={{ fontWeight: 900, textShadow: '0 0 1px currentColor' }}
               >
                 What Our Clients Are Saying
