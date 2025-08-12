@@ -79,3 +79,8 @@ svg[data-prefix="fas"] {
   max-width: 1em !important;
   max-height: 1em !important;
 }
+
+/* Hide scrollbars */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

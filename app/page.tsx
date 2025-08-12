@@ -918,16 +918,11 @@ export default function Home() {
 
         {/* Full Width Image Carousel */}
         <div 
-          className="overflow-x-auto cursor-grab active:cursor-grabbing"
+          className="overflow-x-auto cursor-grab active:cursor-grabbing hide-scrollbar"
           style={{
             scrollBehavior: 'smooth',
             scrollbarWidth: 'none',
             msOverflowStyle: 'none'
-          }}
-          css={{
-            '&::-webkit-scrollbar': {
-              display: 'none'
-            }
           }}
           onMouseDown={(e) => {
             const slider = e.currentTarget;
@@ -943,7 +938,7 @@ export default function Home() {
             // Temporarily disable smooth scrolling for immediate response
             slider.style.scrollBehavior = 'auto';
             
-            const handleMouseMove = (e) => {
+            const handleMouseMove = (e: MouseEvent) => {
               if (!isDown) return;
               const x = e.pageX;
               const walk = (startX - x); // Direct 1:1 mapping for free drag
