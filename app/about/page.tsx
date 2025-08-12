@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAward, faUsers, faHandshake, faStar, faPhone, faCalendarAlt, faHammer, faHome } from '@fortawesome/free-solid-svg-icons';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
+import CTA from '../components/CTA';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,7 +45,7 @@ export default function About() {
       <Navigation showMenu={true} textColor="text-black" />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen bg-black text-white overflow-hidden pt-20">
+      <section ref={heroRef} className="relative h-[70vh] bg-black text-white overflow-hidden pt-20">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -55,19 +56,19 @@ export default function About() {
         <div className="absolute inset-0 bg-black/60 z-10" />
 
         {/* Content */}
-        <div className="relative z-20 flex flex-col justify-center min-h-screen px-6 lg:px-8">
+        <div className="relative z-20 flex flex-col justify-center h-full px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1
               ref={titleRef}
               className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
             >
-              About Levi Homes
+              Why Levi Homes?
             </h1>
             <p 
               ref={subtitleRef}
               className="font-sans text-xl md:text-2xl text-white/80 leading-relaxed max-w-3xl mx-auto"
             >
-              Building exceptional homes and lasting relationships since 2003. Houston's premier luxury remodeling experts.
+              Built on honest principles, determination, family values and passion for building what matters most to our clients.
             </p>
           </div>
         </div>
@@ -83,15 +84,22 @@ export default function About() {
                 <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">Our Story</span>
               </div>
               <h2 className="font-serif text-4xl md:text-5xl font-bold text-black mb-8 leading-tight">
-                Excellence in Every Project
+                Why Levi Homes?
               </h2>
               <p className="font-sans text-lg text-black/70 leading-relaxed mb-6">
-                Levi Homes is Houston's premier luxury remodeling company, dedicated to transforming houses into dream homes. We specialize in high-end kitchen and bathroom remodeling, room additions, and complete home renovations throughout the Greater Houston Area.
+                With so many companies to choose from, one has to ask themselves that question, "Why Levi Homes"? The answer is very simple; we built our business with honest principles, determination, family values and passion for building what matter most to our clients.
               </p>
               <p className="font-sans text-lg text-black/70 leading-relaxed mb-8">
-                Our team of skilled craftsmen and designers work closely with each client to bring their vision to life, using only the finest materials and latest techniques to ensure exceptional results that exceed expectations.
+                No Matter what contracting services you need, LEVI HOMES has the power to take your next home improvement to the next level. Undertaking a home construction project on your own or allow an inexperienced person to take on the task can take a huge toll on your time, energy and budget.
               </p>
               
+              {/* CTA Button */}
+              <div>
+                <a href="tel:+17139225715" className="bg-gradient-to-b from-[#F8B702] via-[#F8B702] to-[#E6A602] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#FFD700] hover:to-[#F8B702] hover:scale-105 shadow-lg shadow-black/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20 before:rounded-lg sm:before:rounded-xl w-full sm:w-[335px] text-center">
+                  <FontAwesomeIcon icon={faPhone} className="mr-2 fa-fw" />
+                  Call Us (713) 922-5715
+                </a>
+              </div>
             </div>
 
             {/* Image */}
@@ -108,69 +116,165 @@ export default function About() {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-24 bg-[#F8F7F5]">
+      {/* Video Section */}
+      <section className="py-24 bg-black">
         <div className="max-w-6xl mx-auto px-8">
-          {/* Section Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <div className="mb-4">
+              <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">Watch Our Story</span>
+            </div>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6">
+              Meet The Levi Homes Team
+            </h2>
+            <p className="font-sans text-lg text-white/80 leading-relaxed max-w-3xl mx-auto">
+              Discover what makes Levi Homes Houston's trusted choice for luxury home remodeling.
+            </p>
+          </div>
+          
+          {/* Video Container */}
+          <div className="relative max-w-4xl mx-auto">
+            <div className="relative bg-gradient-to-br from-[#F8B702]/20 via-[#FFD700]/10 to-[#F8B702]/20 p-2 rounded-3xl shadow-2xl shadow-[#F8B702]/30 border-2 border-[#F8B702]/30">
+              <div className="aspect-video rounded-2xl overflow-hidden bg-white shadow-xl relative">
+                <iframe
+                  src="https://player.vimeo.com/video/268824069?h=0&title=0&byline=0&portrait=0&color=F8B702"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                  title="Levi Homes - About Us"
+                ></iframe>
+                
+                {/* Play icon overlay indicator */}
+                <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+                  <div className="bg-[#F8B702]/90 backdrop-blur-sm rounded-full p-4 shadow-2xl border-2 border-white/20">
+                    <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="bg-black text-white relative z-10 py-8 sm:py-12 md:py-16 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/showcase/ferris-1.jpg)' }}>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/70 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30 z-[1]"></div>
+        <div className="mx-auto px-8 relative z-10" style={{ maxWidth: '1088px' }}>
+          {/* Section Header */}
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+            <div className="mb-3 sm:mb-4">
               <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">Our Values</span>
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-black mb-6">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-0 sm:mb-1 md:mb-1 text-white" style={{ fontWeight: 900, textShadow: '0 0 1px currentColor' }}>
               What Sets Us Apart
             </h2>
-            <p className="font-sans text-lg text-black/70 leading-relaxed max-w-3xl mx-auto">
+            <p className="font-sans text-base sm:text-lg md:text-xl text-white/80 leading-relaxed max-w-4xl mx-auto px-4 sm:px-0">
               Our core values guide every project, ensuring exceptional results and lasting relationships with our clients.
             </p>
           </div>
 
           {/* Values Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-4 md:gap-4">
             
-            {/* Excellence */}
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#FFD700] via-[#F8B702] to-[#D4A003] rounded-xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <FontAwesomeIcon icon={faAward} className="text-white text-2xl" />
+            {/* Communication */}
+            <div className="process-step group cursor-pointer bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-[#F8B702]/30 transition-all duration-300">
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#FFD700] via-[#F8B702] to-[#D4A003] rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-105 shadow-inner shadow-black/10 border-2 border-[#FFE55C]/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/10 before:to-white/20 before:rounded-lg">
+                    <FontAwesomeIcon icon={faUsers} className="text-white text-2xl drop-shadow-lg relative z-10" />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <div className="text-[#F8B702] font-bold text-xs uppercase tracking-wider mb-2">01. Foundation</div>
+                  <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
+                    Communication
+                  </h3>
+                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                    Lines of communication is extremely important during any project. We at Levi Homes open multiple lines of communication with each and every client. Via text, phone call or email we provide vital information, guiding them every step of the way.
+                  </p>
+                </div>
               </div>
-              <h3 className="font-serif text-xl font-semibold text-black mb-4">Excellence</h3>
-              <p className="text-black/70 leading-relaxed">
-                Every project reflects our commitment to the highest standards of craftsmanship and attention to detail.
-              </p>
             </div>
 
-            {/* Integrity */}
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#FFD700] via-[#F8B702] to-[#D4A003] rounded-xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <FontAwesomeIcon icon={faHandshake} className="text-white text-2xl" />
+            {/* Peace of Mind */}
+            <div className="process-step group cursor-pointer bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-[#F8B702]/30 transition-all duration-300">
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#FFD700] via-[#F8B702] to-[#D4A003] rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-105 shadow-inner shadow-black/10 border-2 border-[#FFE55C]/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/10 before:to-white/20 before:rounded-lg">
+                    <FontAwesomeIcon icon={faHandshake} className="text-white text-2xl drop-shadow-lg relative z-10" />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <div className="text-[#F8B702] font-bold text-xs uppercase tracking-wider mb-2">02. Assurance</div>
+                  <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
+                    Peace of Mind
+                  </h3>
+                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                    Levi Homes is a professional design-build firm helping clients invest their money instead of spending their money. All of our craftsmen are trained in house to the highest standards.
+                  </p>
+                </div>
               </div>
-              <h3 className="font-serif text-xl font-semibold text-black mb-4">Integrity</h3>
-              <p className="text-black/70 leading-relaxed">
-                Built on honest principles and transparent communication throughout every stage of your project.
-              </p>
             </div>
 
-            {/* Family Values */}
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#FFD700] via-[#F8B702] to-[#D4A003] rounded-xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <FontAwesomeIcon icon={faUsers} className="text-white text-2xl" />
+            {/* Timeline */}
+            <div className="process-step group cursor-pointer bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-[#F8B702]/30 transition-all duration-300">
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#FFD700] via-[#F8B702] to-[#D4A003] rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-105 shadow-inner shadow-black/10 border-2 border-[#FFE55C]/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/10 before:to-white/20 before:rounded-lg">
+                    <FontAwesomeIcon icon={faCalendarAlt} className="text-white text-2xl drop-shadow-lg relative z-10" />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <div className="text-[#F8B702] font-bold text-xs uppercase tracking-wider mb-2">03. Precision</div>
+                  <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
+                    Timeline
+                  </h3>
+                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                    No one likes delays. Our specialty teams work together on hundreds of jobs. Their superior communication, attention to detail and project management keep your project moving in the right direction.
+                  </p>
+                </div>
               </div>
-              <h3 className="font-serif text-xl font-semibold text-black mb-4">Family Values</h3>
-              <p className="text-black/70 leading-relaxed">
-                We treat every client like family, building lasting relationships based on trust and mutual respect.
-              </p>
             </div>
 
-            {/* Quality */}
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#FFD700] via-[#F8B702] to-[#D4A003] rounded-xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <FontAwesomeIcon icon={faStar} className="text-white text-2xl" />
+            {/* No Surprises */}
+            <div className="process-step group cursor-pointer bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-[#F8B702]/30 transition-all duration-300">
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#FFD700] via-[#F8B702] to-[#D4A003] rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-105 shadow-inner shadow-black/10 border-2 border-[#FFE55C]/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/10 before:to-white/20 before:rounded-lg">
+                    <FontAwesomeIcon icon={faStar} className="text-white text-2xl drop-shadow-lg relative z-10" />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <div className="text-[#F8B702] font-bold text-xs uppercase tracking-wider mb-2">04. Integrity</div>
+                  <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
+                    No Surprises
+                  </h3>
+                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                    We plan and study every possible outcome to eliminate the element of surprise. Our experienced team is skilled and ready to handle a variety of scenarios with no hidden charges.
+                  </p>
+                </div>
               </div>
-              <h3 className="font-serif text-xl font-semibold text-black mb-4">Quality</h3>
-              <p className="text-black/70 leading-relaxed">
-                All craftsmen are trained in-house to our exacting standards, ensuring consistent, superior results.
-              </p>
             </div>
 
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-8 sm:mt-10 md:mt-12 relative z-20">
+            <div className="flex flex-col sm:flex-row gap-8 sm:gap-4 md:gap-4 justify-center items-center sm:ml-2 md:ml-2">
+              <a href="tel:+17139225715" className="bg-gradient-to-b from-[#F8B702] via-[#F8B702] to-[#E6A602] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#FFD700] hover:to-[#F8B702] hover:scale-105 shadow-lg shadow-black/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20 before:rounded-lg sm:before:rounded-xl w-full sm:w-[335px] text-center">
+                <FontAwesomeIcon icon={faPhone} className="mr-2" />
+                Call Us (713) 922-5715
+              </a>
+              <a href="/contact" className="bg-gradient-to-b from-white via-gray-50 to-gray-100 text-black px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-white shadow-lg shadow-black/30 border border-white/50 hover:shadow-lg hover:shadow-[#F8B702]/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/20 before:to-white/40 before:rounded-lg sm:before:rounded-xl hover:scale-105 w-full sm:w-[335px] text-center">
+                Get Your Custom Proposal
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -178,57 +282,51 @@ export default function About() {
       {/* Quality Section */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <div className="mb-4">
-              <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">Our Commitment</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Content */}
+            <div>
+              <div className="mb-6">
+                <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">Professional Help</span>
+              </div>
+              <h2 className="font-serif text-4xl md:text-5xl font-bold text-black mb-8 leading-tight">
+                Let Us Take The Worry Out Of Your Next Project
+              </h2>
+              <p className="font-sans text-lg text-black/70 leading-relaxed mb-8">
+                Without professional help, your design project can end with costly mistakes. Call us today at <a href="tel:+17139225715" className="text-[#F8B702] font-semibold hover:underline">713-922-5715</a> for a free quote and let the Team at Levi Homes take the worry of you next home improvement project.
+              </p>
+              
+              <div>
+                <a href="tel:+17139225715" className="bg-gradient-to-b from-[#F8B702] via-[#F8B702] to-[#E6A602] text-white px-8 py-4 rounded-lg font-medium text-lg transition-all duration-300 hover:from-[#FFD700] hover:to-[#F8B702] hover:scale-105 shadow-lg shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20 before:rounded-lg inline-block">
+                  <FontAwesomeIcon icon={faPhone} className="mr-2" />
+                  Call Us (713) 922-5715
+                </a>
+              </div>
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-black mb-6">
-              Quality You Can Trust
-            </h2>
-            <p className="font-sans text-lg text-black/70 leading-relaxed max-w-3xl mx-auto">
-              We stand behind every project with a commitment to exceptional craftsmanship and customer satisfaction.
-            </p>
+
+            {/* Image */}
+            <div className="relative">
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="/images/showcase/Million Dollar Listing–Los Angeles.jpeg" 
+                  alt="Professional Construction Team" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Floating stats card */}
+              <div className="absolute -bottom-8 -left-8 bg-white rounded-xl shadow-xl p-6 border border-gray-100">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-[#F8B702] mb-1">20+</div>
+                  <div className="text-sm text-black/60 font-medium">Years Experience</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Service Areas Section */}
-      <section className="py-24 bg-[#F8F7F5]">
-        <div className="max-w-6xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <div className="mb-4">
-              <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">Service Areas</span>
-            </div>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-black mb-6">
-              Serving Greater Houston
-            </h2>
-            <p className="font-sans text-lg text-black/70 leading-relaxed max-w-3xl mx-auto">
-              We proudly serve homeowners throughout the Houston metropolitan area and surrounding communities.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-24 bg-black text-white">
-        <div className="max-w-4xl mx-auto px-8 text-center">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8">
-            Ready to Transform Your Home?
-          </h2>
-          <p className="font-sans text-xl text-white/80 leading-relaxed mb-12 max-w-2xl mx-auto">
-            Experience the Levi Homes difference. Let's discuss your vision and create the home of your dreams.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a href="tel:+17139225715" className="bg-gradient-to-b from-[#F8B702] via-[#F8B702] to-[#E6A602] text-white px-10 py-4 rounded-[20px] font-medium text-lg transition-all duration-300 hover:from-[#FFD700] hover:to-[#F8B702] hover:scale-105 shadow-lg shadow-black/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20 before:rounded-[20px]">
-              <FontAwesomeIcon icon={faPhone} className="mr-2" />
-              Call (713) 922-5715
-            </a>
-            <a href="/contact" className="bg-gradient-to-b from-white via-gray-50 to-gray-100 text-black px-10 py-4 rounded-[20px] font-medium text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-white shadow-lg shadow-black/20 border border-white/30 hover:shadow-lg hover:shadow-[#F8B702]/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/20 before:to-white/40 before:rounded-[20px] hover:scale-105">
-              Schedule Consultation
-            </a>
-          </div>
-        </div>
-      </section>
+      <CTA 
+        description="Experience the Levi Homes difference. Let's discuss your vision and create the home of your dreams."
+      />
 
       <Footer />
     </div>

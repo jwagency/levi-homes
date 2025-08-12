@@ -145,13 +145,6 @@ export default function Navigation({
                     Portfolio
                   </a>
                   <a 
-                    href="/testimonials" 
-                    onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-2xl md:text-3xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
-                  >
-                    Testimonials
-                  </a>
-                  <a 
                     href="/contact" 
                     onClick={() => setIsMenuOpen(false)}
                     className="block text-white font-bold text-2xl md:text-3xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
