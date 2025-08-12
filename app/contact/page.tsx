@@ -85,58 +85,95 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Section - New Layout */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-8">
+      {/* Contact Section - Glassmorphism Design */}
+      <section className="py-12 sm:py-16 md:py-24 bg-[#F9FAFC] text-black">
+        <div className="max-w-6xl mx-auto px-8 relative z-10">
           
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-black mb-4">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+            <div className="mb-3 sm:mb-4">
+              <span className="font-sans text-sm uppercase tracking-wider text-[#F8B702] font-medium">Get In Touch</span>
+            </div>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-black mb-6 leading-none">
               Our Contact Information
             </h2>
+            <p className="font-sans text-base sm:text-lg md:text-xl text-black/70 leading-relaxed max-w-4xl mx-auto px-4 sm:px-0">
+              Ready to start your next project? We're here to help bring your vision to life.
+            </p>
           </div>
 
-          {/* Contact Info Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {/* Contact Info Cards with Glassmorphism */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-4 md:gap-4 mb-16">
             
             {/* Contact Us Card */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 text-center">
-              <div className="w-16 h-16 bg-[#F8B702] rounded-full flex items-center justify-center mx-auto mb-6">
-                <FontAwesomeIcon icon={faPhone} className="text-white text-xl" />
-              </div>
-              <h3 className="font-sans text-lg font-semibold text-black mb-4">Contact Us:</h3>
-              <div className="space-y-2">
-                <p className="text-black/70">Phone: <a href="tel:+17139225715" className="text-black/70 hover:text-[#F8B702] transition-colors">713-922-5715</a></p>
-                <p className="text-black/70">Email: <a href="mailto:levi@levihomes.com" className="text-black/70 hover:text-[#F8B702] transition-colors">levi@levihomes.com</a></p>
+            <div className="process-step group cursor-pointer bg-black/80 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-[#F8B702]/50 transition-all duration-300 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-[#F8B702]/20 hover:bg-black/90">
+              <div className="flex flex-col items-center text-center">
+                <div className="flex-shrink-0 mb-6">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#FFD700] via-[#F8B702] to-[#D4A003] rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-105 shadow-inner shadow-black/10 border-2 border-[#FFE55C]/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/10 before:to-white/20 before:rounded-lg">
+                    <FontAwesomeIcon icon={faPhone} className="text-white text-2xl drop-shadow-lg relative z-10" />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <div className="text-[#F8B702] font-bold text-xs uppercase tracking-wider mb-2">01. Contact</div>
+                  <h3 className="font-serif text-xl md:text-2xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300 text-white">
+                    Contact Us
+                  </h3>
+                  <div className="space-y-2">
+                    <p className="font-sans text-lg text-white/80 leading-relaxed">
+                      Phone: <a href="tel:+17139225715" className="text-white/80 hover:text-[#F8B702] transition-colors">713-922-5715</a>
+                    </p>
+                    <p className="font-sans text-lg text-white/80 leading-relaxed">
+                      Email: <a href="mailto:levi@levihomes.com" className="text-white/80 hover:text-[#F8B702] transition-colors">levi@levihomes.com</a>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Location Card */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 text-center">
-              <div className="w-16 h-16 bg-[#F8B702] rounded-full flex items-center justify-center mx-auto mb-6">
-                <FontAwesomeIcon icon={faMapMarkerAlt} className="text-white text-xl" />
+            <div className="process-step group cursor-pointer bg-black/80 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-[#F8B702]/50 transition-all duration-300 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-[#F8B702]/20 hover:bg-black/90">
+              <div className="flex flex-col items-center text-center">
+                <div className="flex-shrink-0 mb-6">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#FFD700] via-[#F8B702] to-[#D4A003] rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-105 shadow-inner shadow-black/10 border-2 border-[#FFE55C]/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/10 before:to-white/20 before:rounded-lg">
+                    <FontAwesomeIcon icon={faMapMarkerAlt} className="text-white text-2xl drop-shadow-lg relative z-10" />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <div className="text-[#F8B702] font-bold text-xs uppercase tracking-wider mb-2">02. Location</div>
+                  <h3 className="font-serif text-xl md:text-2xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300 text-white">
+                    Location
+                  </h3>
+                  <a 
+                    href="https://maps.app.goo.gl/Z8Ce76dukE9KJT6W8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-sans text-lg text-white/80 leading-relaxed hover:text-[#F8B702] transition-colors duration-300 block"
+                  >
+                    1001 S Dairy Ashford Rd #170,<br />
+                    Houston, TX 77077
+                  </a>
+                </div>
               </div>
-              <h3 className="font-sans text-lg font-semibold text-black mb-4">Location:</h3>
-              <a 
-                href="https://maps.app.goo.gl/Z8Ce76dukE9KJT6W8"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black/70 hover:text-[#F8B702] transition-colors duration-300 block"
-              >
-                1001 S Dairy Ashford Rd #170,<br />
-                Houston, TX 77077
-              </a>
             </div>
 
             {/* Hours Card */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 text-center">
-              <div className="w-16 h-16 bg-[#F8B702] rounded-full flex items-center justify-center mx-auto mb-6">
-                <FontAwesomeIcon icon={faClock} className="text-white text-xl" />
-              </div>
-              <h3 className="font-sans text-lg font-semibold text-black mb-4">Hours of Operation:</h3>
-              <div className="space-y-1">
-                <p className="text-black/70">Monday - Friday: 8am to 6pm</p>
-                <p className="text-black/70">Saturday & Sunday: Closed</p>
+            <div className="process-step group cursor-pointer bg-black/80 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-[#F8B702]/50 transition-all duration-300 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-[#F8B702]/20 hover:bg-black/90">
+              <div className="flex flex-col items-center text-center">
+                <div className="flex-shrink-0 mb-6">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#FFD700] via-[#F8B702] to-[#D4A003] rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-105 shadow-inner shadow-black/10 border-2 border-[#FFE55C]/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/10 before:to-white/20 before:rounded-lg">
+                    <FontAwesomeIcon icon={faClock} className="text-white text-2xl drop-shadow-lg relative z-10" />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <div className="text-[#F8B702] font-bold text-xs uppercase tracking-wider mb-2">03. Hours</div>
+                  <h3 className="font-serif text-xl md:text-2xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300 text-white">
+                    Hours of Operation
+                  </h3>
+                  <div className="space-y-1">
+                    <p className="font-sans text-lg text-white/80 leading-relaxed">Monday - Friday: 8am to 6pm</p>
+                    <p className="font-sans text-lg text-white/80 leading-relaxed">Saturday & Sunday: Closed</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

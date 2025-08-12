@@ -1,84 +1,86 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faEnvelope, faPhone, faMessage } from '@fortawesome/free-solid-svg-icons';
-
 export default function ContactForm() {
   return (
-    <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-lg border border-gray-100 mb-20">
+    <div className="bg-black/80 backdrop-blur-md rounded-2xl p-8 lg:p-12 shadow-xl shadow-black/20 border border-white/20 mb-20">
       <div className="text-center mb-8">
-        <h3 className="font-serif text-3xl md:text-4xl font-bold text-black mb-4">
+        <h3 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4">
           Request Free Consultation
         </h3>
       </div>
 
-      <form className="space-y-6 max-w-4xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="relative">
-            <input
-              type="text"
-              id="firstName"
-              name="firstName"
-              required
-              placeholder="Your Name*"
-              className="w-full px-4 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300 placeholder-gray-600"
-            />
-            <FontAwesomeIcon icon={faUser} className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
-          </div>
-          <div className="relative">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              placeholder="Email Address*"
-              className="w-full px-4 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300 placeholder-gray-600"
-            />
-            <FontAwesomeIcon icon={faEnvelope} className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <form className="space-y-4 sm:space-y-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           <div>
-            <input
-              type="text"
-              id="projectType"
-              name="projectType"
-              placeholder="Request Initial Inspection"
-              className="w-full px-4 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300 placeholder-gray-600"
+            <label htmlFor="name" className="block text-sm font-semibold text-white mb-2">Your Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name"
+              className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-[#232323] border border-gray-600 rounded-lg text-white font-medium text-sm sm:text-base placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300"
+              placeholder="John Doe"
             />
           </div>
-          <div className="relative">
-            <input
-              type="tel"
-              id="phone"
+          <div>
+            <label htmlFor="phone" className="block text-sm font-semibold text-white mb-2">Phone Number</label>
+            <input 
+              type="tel" 
+              id="phone" 
               name="phone"
-              required
-              placeholder="Phone Number*"
-              className="w-full px-4 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300 placeholder-gray-600"
+              className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-[#232323] border border-gray-600 rounded-lg text-white font-medium text-sm sm:text-base placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300"
+              placeholder="(713) 922-5715"
             />
-            <FontAwesomeIcon icon={faPhone} className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
           </div>
         </div>
-
-        <div className="relative">
-          <textarea
-            id="message"
-            name="message"
-            rows={5}
-            required
-            placeholder="Write Your Message"
-            className="w-full px-4 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300 resize-vertical placeholder-gray-600"
+        
+        <div>
+          <label htmlFor="email" className="block text-sm font-semibold text-white mb-2">Email Address</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email"
+            className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-[#232323] border border-gray-600 rounded-lg text-white font-medium text-sm sm:text-base placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300"
+            placeholder="john@example.com"
           />
-          <FontAwesomeIcon icon={faMessage} className="absolute right-4 top-6 text-gray-400" />
         </div>
-
-        <div className="pt-4">
-          <button
-            type="submit"
-            className="w-full bg-gradient-to-r from-[#F8B702] to-[#E6A602] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:from-[#FFD700] hover:to-[#F8B702] hover:scale-[1.02] shadow-lg"
+        
+        <div>
+          <label htmlFor="project-type" className="block text-sm font-semibold text-white mb-2">Project Type</label>
+          <select 
+            id="project-type" 
+            name="project-type"
+            className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-[#232323] border border-gray-600 rounded-lg text-white font-medium text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300"
           >
-            SEND MESSAGE
-          </button>
+            <option value="" className="bg-[#232323] text-white">Select a project type</option>
+            <option value="kitchen" className="bg-[#232323] text-white">Kitchen Remodeling</option>
+            <option value="bathroom" className="bg-[#232323] text-white">Bathroom Renovation</option>
+            <option value="addition" className="bg-[#232323] text-white">Room Addition</option>
+            <option value="full-remodel" className="bg-[#232323] text-white">Full Home Remodel</option>
+            <option value="other" className="bg-[#232323] text-white">Other</option>
+          </select>
         </div>
+        
+        <div>
+          <label htmlFor="message" className="block text-sm font-semibold text-white mb-2">Project Details</label>
+          <textarea 
+            id="message" 
+            name="message"
+            rows={3}
+            className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-[#232323] border border-gray-600 rounded-lg text-white font-medium text-sm sm:text-base placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#F8B702] focus:border-[#F8B702] transition-all duration-300 resize-none"
+            placeholder="Tell us about your vision, timeline, and any specific requirements..."
+          ></textarea>
+        </div>
+        
+        <button 
+          type="submit"
+          className="w-full bg-gradient-to-r from-[#F8B702] to-[#FFD700] text-black px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-bold text-base sm:text-lg transition-all duration-500 hover:shadow-2xl hover:shadow-[#F8B702]/40 hover:scale-[1.02] relative overflow-hidden group"
+        >
+          <span className="relative z-10 flex items-center justify-center">
+            Send Message 
+            <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </span>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FFD700] to-[#F8B702] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg sm:rounded-xl"></div>
+        </button>
       </form>
     </div>
   );
