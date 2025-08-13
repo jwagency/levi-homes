@@ -8,6 +8,7 @@ import { faPhone, faExpand, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 import CTA from '../components/CTA';
+import ContactModal from '../components/ContactModal';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -104,6 +105,7 @@ export default function Portfolio() {
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedImage, setSelectedImage] = useState<PortfolioItem | null>(null);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const filteredItems = selectedCategory === 'All' 
     ? portfolioItems 
@@ -186,9 +188,9 @@ export default function Portfolio() {
                 <FontAwesomeIcon icon={faPhone} className="mr-2" />
                 Call Us (713) 922-5715
               </a>
-              <a href="/contact" className="bg-gradient-to-b from-white via-gray-50 to-gray-100 text-black px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-white shadow-lg shadow-black/30 border border-white/50 hover:shadow-lg hover:shadow-[#F8B702]/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/20 before:to-white/40 before:rounded-lg sm:before:rounded-xl hover:scale-105 w-full sm:w-[335px] text-center">
+              <button onClick={() => setIsContactModalOpen(true)} className="bg-gradient-to-b from-white via-gray-50 to-gray-100 text-black px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-white shadow-lg shadow-black/30 border border-white/50 hover:shadow-lg hover:shadow-[#F8B702]/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/20 before:to-white/40 before:rounded-lg sm:before:rounded-xl hover:scale-105 w-full sm:w-[335px] text-center">
                 Get Your Custom Proposal
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -320,6 +322,11 @@ export default function Portfolio() {
       />
 
       <Footer />
+      
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)} 
+      />
     </div>
   );
 }

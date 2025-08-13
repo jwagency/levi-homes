@@ -7,6 +7,7 @@ import { splitTextIntoWords } from './utils/textSplit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComments, faRuler, faHammer, faStar, faPhone, faEnvelope, faMapMarkerAlt, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import Footer from './components/Footer';
+import ContactModal from './components/ContactModal';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,6 +21,7 @@ export default function Home() {
   const servicesRef = useRef<HTMLDivElement>(null);
   const servicesTitleRef = useRef<HTMLHeadingElement>(null);
   const servicesSubtitleRef = useRef<HTMLParagraphElement>(null);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const portfolioRef = useRef<HTMLDivElement>(null);
   const portfolioTitleRef = useRef<HTMLHeadingElement>(null);
   const processRef = useRef<HTMLDivElement>(null);
@@ -456,9 +458,9 @@ export default function Home() {
               <FontAwesomeIcon icon={faPhone} className="mr-2 fa-fw" />
               Call Us (713) 922-5715
             </a>
-            <a href="/contact" className="bg-gradient-to-b from-white via-gray-50 to-gray-100 text-black px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-white shadow-lg shadow-black/30 border border-white/50 hover:shadow-lg hover:shadow-[#F8B702]/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/20 before:to-white/40 before:rounded-lg sm:before:rounded-xl hover:scale-105 w-full sm:w-[335px] text-center">
+            <button onClick={() => setIsContactModalOpen(true)} className="bg-gradient-to-b from-white via-gray-50 to-gray-100 text-black px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-white shadow-lg shadow-black/30 border border-white/50 hover:shadow-lg hover:shadow-[#F8B702]/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/20 before:to-white/40 before:rounded-lg sm:before:rounded-xl hover:scale-105 w-full sm:w-[335px] text-center">
               Get Your Custom Proposal
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -688,9 +690,9 @@ export default function Home() {
                 <FontAwesomeIcon icon={faPhone} className="mr-2" />
                 Call Us (713) 922-5715
               </a>
-              <a href="/contact" className="bg-gradient-to-b from-gray-800 via-black to-gray-900 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-black shadow-lg shadow-black/50 border border-gray-700 hover:shadow-lg hover:shadow-[#F8B702]/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/10 before:to-white/20 before:rounded-lg sm:before:rounded-xl hover:scale-105 w-full sm:w-[335px] text-center">
+              <button onClick={() => setIsContactModalOpen(true)} className="bg-gradient-to-b from-gray-800 via-black to-gray-900 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-black shadow-lg shadow-black/50 border border-gray-700 hover:shadow-lg hover:shadow-[#F8B702]/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/10 before:to-white/20 before:rounded-lg sm:before:rounded-xl hover:scale-105 w-full sm:w-[335px] text-center">
                 Get Your Custom Proposal
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -908,9 +910,9 @@ export default function Home() {
                 <FontAwesomeIcon icon={faPhone} className="mr-2" />
                 Call Us (713) 922-5715
               </a>
-              <a href="/contact" className="bg-gradient-to-b from-gray-800 via-black to-gray-900 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-black shadow-lg shadow-black/50 border border-gray-700 hover:shadow-lg hover:shadow-[#F8B702]/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/10 before:to-white/20 before:rounded-lg sm:before:rounded-xl hover:scale-105 w-full sm:w-[335px] text-center">
+              <button onClick={() => setIsContactModalOpen(true)} className="bg-gradient-to-b from-gray-800 via-black to-gray-900 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-black shadow-lg shadow-black/50 border border-gray-700 hover:shadow-lg hover:shadow-[#F8B702]/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/10 before:to-white/20 before:rounded-lg sm:before:rounded-xl hover:scale-105 w-full sm:w-[335px] text-center">
                 Get Your Custom Proposal
-              </a>
+              </button>
             </div>
           </div>
 
@@ -1231,6 +1233,11 @@ export default function Home() {
       </section>
 
       <Footer />
+      
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)} 
+      />
     </div>
   );
 }

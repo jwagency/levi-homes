@@ -1,6 +1,6 @@
 'use client';
 
-import { useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,6 +8,7 @@ import { faPhone, faEnvelope, faMapMarkerAlt, faClock } from '@fortawesome/free-
 import Footer from '../components/Footer';
 import ContactForm from '../components/ContactForm';
 import Navigation from '../components/Navigation';
+import ContactModal from '../components/ContactModal';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +16,7 @@ export default function Contact() {
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -77,9 +79,9 @@ export default function Contact() {
                 <FontAwesomeIcon icon={faPhone} className="mr-2 fa-fw" />
                 Call Us (713) 922-5715
               </a>
-              <a href="#contact-form" className="bg-gradient-to-b from-white via-gray-50 to-gray-100 text-black px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-white shadow-lg shadow-black/30 border border-white/50 hover:shadow-lg hover:shadow-[#F8B702]/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/20 before:to-white/40 before:rounded-lg sm:before:rounded-xl hover:scale-105 w-full sm:w-[335px] text-center">
+              <button onClick={() => setIsContactModalOpen(true)} className="bg-gradient-to-b from-white via-gray-50 to-gray-100 text-black px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-white shadow-lg shadow-black/30 border border-white/50 hover:shadow-lg hover:shadow-[#F8B702]/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/20 before:to-white/40 before:rounded-lg sm:before:rounded-xl hover:scale-105 w-full sm:w-[335px] text-center">
                 Get Your Custom Proposal
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -196,6 +198,11 @@ export default function Contact() {
       </section>
 
       <Footer />
+      
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)} 
+      />
     </div>
   );
 }
