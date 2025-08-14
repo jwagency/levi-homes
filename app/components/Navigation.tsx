@@ -62,62 +62,63 @@ export default function Navigation({
 
       {/* Full Screen Menu */}
       {showMenu && isMenuOpen && (
-        <div className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex flex-col justify-center items-center">
+        <div className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex flex-col">
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="absolute top-8 right-8 text-white hover:text-[#F8B702] text-2xl font-light transition-colors duration-300"
+            className="absolute top-6 right-6 text-white hover:text-[#F8B702] text-3xl font-light transition-colors duration-300 z-60"
           >
             ×
           </button>
           
-          <div className="max-w-7xl mx-auto px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32">
+          <div className="flex-1 flex items-center justify-center px-6 py-16 overflow-y-auto">
+            <div className="max-w-6xl mx-auto w-full">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20">
               
               {/* Services Column */}
               <div className="text-center lg:text-left">
-                <h3 className="text-white/60 text-sm uppercase tracking-wider font-medium mb-12">
+                <h3 className="text-white/60 text-sm uppercase tracking-wider font-medium mb-8">
                   Our Services
                 </h3>
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <a 
                     href="/services/kitchen-remodeling" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                    className="block text-white font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Kitchen Remodeling
                   </a>
                   <a 
                     href="/services/bathroom-remodeling" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                    className="block text-white font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Bathroom Remodeling
                   </a>
                   <a 
                     href="/services/general-construction" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                    className="block text-white font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     General Construction
                   </a>
                   <a 
                     href="/services/room-additions" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                    className="block text-white font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Room Additions
                   </a>
                   <a 
                     href="/services/garage-conversion" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                    className="block text-white font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Garage Conversion
                   </a>
                   <a 
                     href="/services/attic-renovation" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                    className="block text-white font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Attic Renovation
                   </a>
@@ -126,28 +127,28 @@ export default function Navigation({
 
               {/* Company Column */}
               <div className="text-center lg:text-left">
-                <h3 className="text-white/60 text-sm uppercase tracking-wider font-medium mb-12">
+                <h3 className="text-white/60 text-sm uppercase tracking-wider font-medium mb-8">
                   Company
                 </h3>
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <a 
                     href="/about" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-2xl md:text-3xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                    className="block text-white font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     About Us
                   </a>
                   <a 
                     href="/portfolio" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-2xl md:text-3xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                    className="block text-white font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Portfolio
                   </a>
                   <a 
                     href="/contact" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-2xl md:text-3xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                    className="block text-white font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Contact
                   </a>
@@ -155,6 +156,7 @@ export default function Navigation({
               </div>
             </div>
           </div>
+        </div>
         </div>
       )}
     </>
