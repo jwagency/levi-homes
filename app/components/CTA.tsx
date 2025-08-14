@@ -16,7 +16,7 @@ export default function CTA({
 }: CTAProps) {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   return (
-    <section className="py-12 sm:py-16 md:py-24 bg-[#0E0E0E] text-white">
+    <section className="py-12 sm:py-16 md:py-24 bg-[#1A1A1A] sm:bg-[#0E0E0E] text-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-8 text-center">
         <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-0 sm:mb-1 md:mb-1" style={{ fontWeight: 900, textShadow: '0 0 1px currentColor' }}>
           {title}
