@@ -28,16 +28,25 @@ export default function Navigation({
       <style dangerouslySetInnerHTML={{
         __html: `
           .mobile-menu-link {
-            margin-bottom: 16px !important;
+            margin-bottom: 20px !important;
             display: block !important;
+            padding: 8px 0 !important;
+            background: rgba(248, 183, 2, 0.1) !important;
           }
           .mobile-menu-link-last {
             margin-bottom: 0 !important;
             display: block !important;
+            padding: 8px 0 !important;
+            background: rgba(248, 183, 2, 0.1) !important;
           }
           @media (min-width: 1024px) {
-            .mobile-menu-link {
+            .mobile-menu-link, .mobile-menu-link-last {
               margin-bottom: 1.5rem !important;
+              background: transparent !important;
+              padding: 0 !important;
+            }
+            .mobile-menu-link-last {
+              margin-bottom: 0 !important;
             }
           }
         `
