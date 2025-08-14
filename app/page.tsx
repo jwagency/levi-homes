@@ -288,7 +288,7 @@ export default function Home() {
   return (
     <div ref={heroRef} className="bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 py-2 sm:py-3 px-4 sm:px-8">
+      <nav className="fixed top-0 left-0 right-0 z-50 py-3 px-6">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <a href="/" className="hover:opacity-75 transition-opacity duration-300">
             <img 
@@ -297,11 +297,11 @@ export default function Home() {
               className="h-16 sm:h-20 md:h-24 w-auto"
             />
           </a>
-          <div className="flex items-center gap-4 sm:gap-8">
+          <div className="flex items-center gap-8">
             <div className="relative">
               <button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-white font-medium text-base sm:text-lg tracking-wider flex items-center gap-2 hover:text-[#F8B702] transition-colors duration-300"
+                className="text-white font-medium text-lg tracking-wider flex items-center gap-2 hover:text-[#F8B702] transition-colors duration-300"
               >
                 MENU
                 <FontAwesomeIcon 
@@ -323,52 +323,52 @@ export default function Home() {
 
                   {/* Menu Content - Two Column Layout */}
                   <div className="max-w-7xl mx-auto px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-32">
                       {/* Services Column */}
                       <div className="text-center lg:text-left">
-                        <div className="mb-12">
-                          <span className="text-[#F8B702] text-sm uppercase tracking-[0.3em] font-medium">Services</span>
-                        </div>
-                        <div className="space-y-10">
+                        <h3 className="text-[#F8B702] text-xs sm:text-sm uppercase tracking-wider font-medium mb-2 lg:mb-12">
+                          Our Services
+                        </h3>
+                        <div className="space-y-4 lg:space-y-6">
                           <a 
                             href="/services/kitchen-remodeling" 
                             onClick={() => setIsMenuOpen(false)}
-                            className="block text-white font-bold text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                            className="block text-white font-bold text-3xl sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                           >
                             Kitchen Remodeling
                           </a>
                           <a 
                             href="/services/bathroom-remodeling" 
                             onClick={() => setIsMenuOpen(false)}
-                            className="block text-white font-bold text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                            className="block text-white font-bold text-3xl sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                           >
                             Bathroom Remodeling
                           </a>
                           <a 
                             href="/services/general-construction" 
                             onClick={() => setIsMenuOpen(false)}
-                            className="block text-white font-bold text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                            className="block text-white font-bold text-3xl sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                           >
                             General Construction
                           </a>
                           <a 
                             href="/services/room-additions" 
                             onClick={() => setIsMenuOpen(false)}
-                            className="block text-white font-bold text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                            className="block text-white font-bold text-3xl sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                           >
                             Room Additions
                           </a>
                           <a 
                             href="/services/garage-conversion" 
                             onClick={() => setIsMenuOpen(false)}
-                            className="block text-white font-bold text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                            className="block text-white font-bold text-3xl sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                           >
                             Garage Conversion
                           </a>
                           <a 
                             href="/services/attic-renovation" 
                             onClick={() => setIsMenuOpen(false)}
-                            className="block text-white font-bold text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                            className="block text-white font-bold text-3xl sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                           >
                             Attic Renovation
                           </a>
@@ -377,35 +377,28 @@ export default function Home() {
 
                       {/* Company Column */}
                       <div className="text-center lg:text-left">
-                        <div className="mb-12">
-                          <span className="text-[#F8B702] text-sm uppercase tracking-[0.3em] font-medium">Company</span>
-                        </div>
-                        <div className="space-y-12">
+                        <h3 className="text-[#F8B702] text-xs sm:text-sm uppercase tracking-wider font-medium mb-2 lg:mb-12 mt-8">
+                          Company
+                        </h3>
+                        <div className="space-y-4 lg:space-y-6">
                           <a 
                             href="/about" 
                             onClick={() => setIsMenuOpen(false)}
-                            className="block text-white font-bold text-2xl md:text-3xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                            className="block text-white font-bold text-3xl sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                           >
                             About Us
                           </a>
                           <a 
                             href="/portfolio" 
                             onClick={() => setIsMenuOpen(false)}
-                            className="block text-white font-bold text-2xl md:text-3xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                            className="block text-white font-bold text-3xl sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                           >
                             Portfolio
                           </a>
                           <a 
-                            href="/testimonials" 
-                            onClick={() => setIsMenuOpen(false)}
-                            className="block text-white font-bold text-2xl md:text-3xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
-                          >
-                            Testimonials
-                          </a>
-                          <a 
                             href="/contact" 
                             onClick={() => setIsMenuOpen(false)}
-                            className="block text-white font-bold text-2xl md:text-3xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide whitespace-nowrap"
+                            className="block text-white font-bold text-3xl sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                           >
                             Contact
                           </a>

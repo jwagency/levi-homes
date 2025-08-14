@@ -25,32 +25,6 @@ export default function Navigation({
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{
-        __html: `
-          .mobile-menu-link {
-            margin-bottom: 20px !important;
-            display: block !important;
-            padding: 8px 0 !important;
-            background: rgba(248, 183, 2, 0.1) !important;
-          }
-          .mobile-menu-link-last {
-            margin-bottom: 0 !important;
-            display: block !important;
-            padding: 8px 0 !important;
-            background: rgba(248, 183, 2, 0.1) !important;
-          }
-          @media (min-width: 1024px) {
-            .mobile-menu-link, .mobile-menu-link-last {
-              margin-bottom: 1.5rem !important;
-              background: transparent !important;
-              padding: 0 !important;
-            }
-            .mobile-menu-link-last {
-              margin-bottom: 0 !important;
-            }
-          }
-        `
-      }} />
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm py-3 px-6">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <a href="/" className="hover:opacity-75 transition-opacity duration-300">
@@ -105,46 +79,46 @@ export default function Navigation({
                 <h3 className="text-[#F8B702] text-xs sm:text-sm uppercase tracking-wider font-medium mb-2 lg:mb-12">
                   Our Services
                 </h3>
-                <div className="mobile-menu-services">
+                <div className="space-y-4 lg:space-y-6">
                   <a 
                     href="/services/kitchen-remodeling" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="mobile-menu-link block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    className="block text-white font-bold text-3xl sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Kitchen Remodeling
                   </a>
                   <a 
                     href="/services/bathroom-remodeling" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="mobile-menu-link block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    className="block text-white font-bold text-3xl sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Bathroom Remodeling
                   </a>
                   <a 
                     href="/services/general-construction" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="mobile-menu-link block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    className="block text-white font-bold text-3xl sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     General Construction
                   </a>
                   <a 
                     href="/services/room-additions" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="mobile-menu-link block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    className="block text-white font-bold text-3xl sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Room Additions
                   </a>
                   <a 
                     href="/services/garage-conversion" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="mobile-menu-link block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    className="block text-white font-bold text-3xl sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Garage Conversion
                   </a>
                   <a 
                     href="/services/attic-renovation" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="mobile-menu-link-last block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    className="block text-white font-bold text-3xl sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Attic Renovation
                   </a>
@@ -153,28 +127,28 @@ export default function Navigation({
 
               {/* Company Column */}
               <div className="text-center lg:text-left">
-                <h3 className="text-[#F8B702] text-xs sm:text-sm uppercase tracking-wider font-medium mb-2 lg:mb-12">
+                <h3 className="text-[#F8B702] text-xs sm:text-sm uppercase tracking-wider font-medium mb-2 lg:mb-12 mt-8">
                   Company
                 </h3>
-                <div className="mobile-menu-company">
+                <div className="space-y-4 lg:space-y-6">
                   <a 
                     href="/about" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="mobile-menu-link block text-white font-bold text-base sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    className="block text-white font-bold text-3xl sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     About Us
                   </a>
                   <a 
                     href="/portfolio" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="mobile-menu-link block text-white font-bold text-base sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    className="block text-white font-bold text-3xl sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Portfolio
                   </a>
                   <a 
                     href="/contact" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="mobile-menu-link-last block text-white font-bold text-base sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    className="block text-white font-bold text-3xl sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Contact
                   </a>
