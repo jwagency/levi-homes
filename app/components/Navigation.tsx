@@ -72,53 +72,53 @@ export default function Navigation({
           
           <div className="flex-1 flex items-start lg:items-center justify-center px-4 pt-16 lg:py-16 pb-8 overflow-y-auto">
             <div className="max-w-6xl mx-auto w-full">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-32">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-32">
               
               {/* Services Column */}
               <div className="text-center lg:text-left">
                 <h3 className="text-[#F8B702] text-sm uppercase tracking-wider font-medium mb-4 lg:mb-12">
                   Our Services
                 </h3>
-                <div className="space-y-2 lg:space-y-6">
+                <div className="space-y-1 lg:space-y-6">
                   <a 
                     href="/services/kitchen-remodeling" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    className="block text-white font-bold text-xl sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Kitchen Remodeling
                   </a>
                   <a 
                     href="/services/bathroom-remodeling" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    className="block text-white font-bold text-xl sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Bathroom Remodeling
                   </a>
                   <a 
                     href="/services/general-construction" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    className="block text-white font-bold text-xl sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     General Construction
                   </a>
                   <a 
                     href="/services/room-additions" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    className="block text-white font-bold text-xl sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Room Additions
                   </a>
                   <a 
                     href="/services/garage-conversion" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    className="block text-white font-bold text-xl sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Garage Conversion
                   </a>
                   <a 
                     href="/services/attic-renovation" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    className="block text-white font-bold text-xl sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Attic Renovation
                   </a>
@@ -130,25 +130,25 @@ export default function Navigation({
                 <h3 className="text-[#F8B702] text-sm uppercase tracking-wider font-medium mb-4 lg:mb-12">
                   Company
                 </h3>
-                <div className="space-y-2 lg:space-y-6">
+                <div className="space-y-1 lg:space-y-6">
                   <a 
                     href="/about" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    className="block text-white font-bold text-lg sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     About Us
                   </a>
                   <a 
                     href="/portfolio" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    className="block text-white font-bold text-lg sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Portfolio
                   </a>
                   <a 
                     href="/contact" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    className="block text-white font-bold text-lg sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Contact
                   </a>
