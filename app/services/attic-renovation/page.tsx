@@ -167,7 +167,7 @@ export default function AtticRenovation() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Structural Assessment
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     We evaluate your attic's structural capacity, ceiling height, and access points to determine renovation possibilities.
                   </p>
                 </div>
@@ -187,7 +187,7 @@ export default function AtticRenovation() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Optimal Space Design
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     Custom designs maximize usable space while ensuring proper ventilation, lighting, and comfortable living conditions.
                   </p>
                 </div>
@@ -207,7 +207,7 @@ export default function AtticRenovation() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Complete Renovation
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     Full attic transformation including flooring, insulation, drywall, electrical, and climate control systems.
                   </p>
                 </div>
@@ -227,7 +227,7 @@ export default function AtticRenovation() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Perfect Sanctuary
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     Final inspection ensures your new attic space is comfortable, safe, and ready to become your favorite retreat.
                   </p>
                 </div>

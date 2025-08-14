@@ -167,7 +167,7 @@ export default function GeneralConstruction() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Project Assessment
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     We evaluate your construction needs, site conditions, and develop a comprehensive project plan.
                   </p>
                 </div>
@@ -187,7 +187,7 @@ export default function GeneralConstruction() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Technical Planning
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     Our engineers create detailed construction plans, securing permits and ensuring code compliance.
                   </p>
                 </div>
@@ -207,7 +207,7 @@ export default function GeneralConstruction() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Professional Execution
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     Skilled tradesmen execute construction with precision, using quality materials and proven methods.
                   </p>
                 </div>
@@ -227,7 +227,7 @@ export default function GeneralConstruction() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Quality Assurance
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     Final inspection and walkthrough ensure every detail meets our high standards and your expectations.
                   </p>
                 </div>

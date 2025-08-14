@@ -168,7 +168,7 @@ export default function KitchenRemodeling() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Discovery & Vision
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     We discuss your vision, lifestyle, and budget to create the perfect kitchen design plan tailored to your needs.
                   </p>
                 </div>
@@ -188,7 +188,7 @@ export default function KitchenRemodeling() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Blueprint to Reality
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     Our designers create detailed plans and 3D renderings of your new kitchen, allowing you to visualize every detail.
                   </p>
                 </div>
@@ -208,7 +208,7 @@ export default function KitchenRemodeling() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Expert Craftsmanship
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     Master craftsmen bring your kitchen vision to life with meticulous attention to detail and premium materials.
                   </p>
                 </div>
@@ -228,7 +228,7 @@ export default function KitchenRemodeling() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Your Dream Realized
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     Final walkthrough and quality inspection ensure your complete satisfaction with your transformed kitchen.
                   </p>
                 </div>

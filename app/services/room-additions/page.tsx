@@ -167,7 +167,7 @@ export default function RoomAdditions() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Space Planning
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     We assess your needs, evaluate structural requirements, and design the perfect addition for your lifestyle.
                   </p>
                 </div>
@@ -187,7 +187,7 @@ export default function RoomAdditions() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Seamless Integration
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     Our architects create detailed plans that match your existing home's style and ensure structural harmony.
                   </p>
                 </div>
@@ -207,7 +207,7 @@ export default function RoomAdditions() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Expert Building
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     Skilled craftsmen execute the addition with precision, ensuring quality and minimizing disruption to your daily life.
                   </p>
                 </div>
@@ -227,7 +227,7 @@ export default function RoomAdditions() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Perfect Finish
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     Final inspection and walkthrough ensure your new addition exceeds expectations and feels like home.
                   </p>
                 </div>

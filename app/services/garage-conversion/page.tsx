@@ -167,7 +167,7 @@ export default function GarageConversion() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Vision Assessment
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     We evaluate your garage space, discuss your conversion goals, and assess structural and utility requirements.
                   </p>
                 </div>
@@ -187,7 +187,7 @@ export default function GarageConversion() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Smart Layout Design
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     Our designers create efficient layouts that maximize space and functionality while ensuring proper building codes.
                   </p>
                 </div>
@@ -207,7 +207,7 @@ export default function GarageConversion() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Complete Transformation
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     Full conversion including insulation, drywall, electrical, plumbing, and finishing to create a comfortable living space.
                   </p>
                 </div>
@@ -227,7 +227,7 @@ export default function GarageConversion() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     New Space Ready
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     Final inspection and walkthrough ensure your converted garage meets all safety standards and your expectations.
                   </p>
                 </div>
