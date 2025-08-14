@@ -741,7 +741,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Discovery & Vision
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     We begin with an in-depth consultation to understand your vision, lifestyle, and project goals, ensuring every detail aligns with your dreams.
                   </p>
                 </div>
@@ -761,7 +761,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Blueprint to Reality
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     Our designers create detailed architectural plans and 3D renderings, allowing you to visualize your space before construction begins.
                   </p>
                 </div>
@@ -781,7 +781,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Expert Craftsmanship
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     Master craftsmen bring your vision to life with meticulous attention to detail, premium materials, and time-tested techniques.
                   </p>
                 </div>
@@ -801,7 +801,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-[#F8B702] transition-colors duration-300">
                     Your Dream Realized
                   </h3>
-                  <p className="font-sans text-lg text-white/80 leading-relaxed">
+                  <p className="font-sans text-sm sm:text-lg text-white/80 leading-relaxed">
                     We conduct a thorough walkthrough, ensuring every element exceeds your expectations before celebrating your transformed space.
                   </p>
                 </div>
