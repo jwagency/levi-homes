@@ -48,7 +48,7 @@ export default function BathroomRemodeling() {
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url("/images/showcase/Screen-Shot-2019-08-09-at-11.15.51-AM.jpg")' }}
+          style={{ backgroundImage: 'url("/images/showcase/how-much-does-full-house-renovation-cost.jpg")' }}
         />
         
         {/* Overlay */}

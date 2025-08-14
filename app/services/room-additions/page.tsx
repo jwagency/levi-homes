@@ -48,7 +48,7 @@ export default function RoomAdditions() {
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url("/images/showcase/Million Dollar Listing–Los Angeles.jpeg")' }}
+          style={{ backgroundImage: 'url("/images/showcase/how-much-does-full-house-renovation-cost.jpg")' }}
         />
         
         {/* Overlay */}
