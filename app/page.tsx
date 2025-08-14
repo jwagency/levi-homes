@@ -449,7 +449,8 @@ export default function Home() {
             ref={subtitleRef}
             className="font-sans text-xs sm:text-sm md:text-base text-white/80 tracking-wider uppercase font-medium max-w-xs sm:max-w-none mb-8"
           >
-            Houston's Premier Home Transformation Specialists
+            Transform your home into a masterpiece with bespoke design, flawless craftsmanship, and timeless elegance<br />
+            crafted exclusively for Houston's most discerning homeowners.
           </p>
           
           {/* CTA Buttons */}
@@ -466,8 +467,16 @@ export default function Home() {
       </section>
 
       {/* Portfolio Section - Where Vision Meets Craftsmanship */}
-      <section ref={portfolioRef} className="min-h-screen bg-black text-white relative z-10 py-12 sm:py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+      <section ref={portfolioRef} className="min-h-screen text-white relative z-10 py-12 sm:py-16 md:py-24">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url(/images/76775055_2493544957596427_6661751652011212800_n.jpg)' }}
+        />
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/90 z-10" />
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           {/* Section Header */}
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
             <div className="mb-3 sm:mb-4">
@@ -588,9 +597,9 @@ export default function Home() {
 
           {/* View More Button */}
           <div className="text-center mt-16">
-            <button className="bg-gradient-to-b from-white via-gray-50 to-gray-100 text-black px-6 sm:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-white shadow-lg shadow-black/20 border border-white/30 hover:shadow-lg hover:shadow-[#F8B702]/15 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/20 before:to-white/40 before:rounded-lg sm:before:rounded-xl hover:scale-105 w-full sm:w-[335px]">
-              View All Projects
-            </button>
+            <a href="/portfolio" className="bg-gradient-to-b from-white via-gray-50 to-gray-100 text-black px-6 sm:px-10 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#F8B702] hover:via-[#F8B702] hover:to-[#E6A602] hover:text-white shadow-lg shadow-black/20 border border-white/30 hover:shadow-lg hover:shadow-[#F8B702]/15 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/20 before:to-white/40 before:rounded-lg sm:before:rounded-xl hover:scale-105 w-full sm:w-[335px] inline-block text-center">
+              View Our Projects
+            </a>
           </div>
         </div>
       </section>
@@ -857,7 +866,7 @@ export default function Home() {
             <div className="testimonial-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group h-96 flex flex-col">
               <div className="flex-1">
                 <div className="w-16 h-16 bg-gray-200 rounded-full overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
-                  <img src="https://images.unsplash.com/photo-1494790108755-2616b612b77c?w=400&h=400&fit=crop&crop=face" alt="Sarah Chen" className="w-full h-full object-cover" />
+                  <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=400&h=400&fit=crop&crop=face" alt="Sarah Chen" className="w-full h-full object-cover" />
                 </div>
                 <blockquote className="font-serif text-lg text-[#0E0E0E] italic leading-relaxed mb-4">
                   "Levi Homes transformed our dated kitchen into the heart of our home. Their attention to detail and craftsmanship exceeded every expectation we had."
