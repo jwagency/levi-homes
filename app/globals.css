@@ -84,3 +84,22 @@ svg[data-prefix="fas"] {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* Mobile menu spacing */
+.mobile-menu-link {
+  margin-bottom: 24px !important;
+}
+
+.mobile-menu-link-last {
+  margin-bottom: 0 !important;
+}
+
+@media (min-width: 1024px) {
+  .mobile-menu-link {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .mobile-menu-link-last {
+    margin-bottom: 0 !important;
+  }
+}

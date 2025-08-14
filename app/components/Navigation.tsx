@@ -79,52 +79,46 @@ export default function Navigation({
                 <h3 className="text-[#F8B702] text-xs sm:text-sm uppercase tracking-wider font-medium mb-2 lg:mb-12">
                   Our Services
                 </h3>
-                <div>
+                <div className="mobile-menu-services">
                   <a 
                     href="/services/kitchen-remodeling" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
-                    style={{ marginBottom: '24px' }}
+                    className="mobile-menu-link block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Kitchen Remodeling
                   </a>
                   <a 
                     href="/services/bathroom-remodeling" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
-                    style={{ marginBottom: '24px' }}
+                    className="mobile-menu-link block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Bathroom Remodeling
                   </a>
                   <a 
                     href="/services/general-construction" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
-                    style={{ marginBottom: '24px' }}
+                    className="mobile-menu-link block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     General Construction
                   </a>
                   <a 
                     href="/services/room-additions" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
-                    style={{ marginBottom: '24px' }}
+                    className="mobile-menu-link block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Room Additions
                   </a>
                   <a 
                     href="/services/garage-conversion" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
-                    style={{ marginBottom: '24px' }}
+                    className="mobile-menu-link block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Garage Conversion
                   </a>
                   <a 
                     href="/services/attic-renovation" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
-                    style={{ marginBottom: '0' }}
+                    className="mobile-menu-link-last block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Attic Renovation
                   </a>
@@ -136,28 +130,25 @@ export default function Navigation({
                 <h3 className="text-[#F8B702] text-xs sm:text-sm uppercase tracking-wider font-medium mb-2 lg:mb-12">
                   Company
                 </h3>
-                <div>
+                <div className="mobile-menu-company">
                   <a 
                     href="/about" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-base sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
-                    style={{ marginBottom: '24px' }}
+                    className="mobile-menu-link block text-white font-bold text-base sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     About Us
                   </a>
                   <a 
                     href="/portfolio" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-base sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
-                    style={{ marginBottom: '24px' }}
+                    className="mobile-menu-link block text-white font-bold text-base sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Portfolio
                   </a>
                   <a 
                     href="/contact" 
                     onClick={() => setIsMenuOpen(false)}
-                    className="block text-white font-bold text-base sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
-                    style={{ marginBottom: '0' }}
+                    className="mobile-menu-link-last block text-white font-bold text-base sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
                   >
                     Contact
                   </a>
