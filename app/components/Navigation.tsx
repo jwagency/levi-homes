@@ -79,11 +79,12 @@ export default function Navigation({
                 <h3 className="text-[#F8B702] text-xs sm:text-sm uppercase tracking-wider font-medium mb-2 lg:mb-12">
                   Our Services
                 </h3>
-                <div className="space-y-4 lg:space-y-6">
+                <div>
                   <a 
                     href="/services/kitchen-remodeling" 
                     onClick={() => setIsMenuOpen(false)}
                     className="block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    style={{ marginBottom: '24px' }}
                   >
                     Kitchen Remodeling
                   </a>
@@ -91,6 +92,7 @@ export default function Navigation({
                     href="/services/bathroom-remodeling" 
                     onClick={() => setIsMenuOpen(false)}
                     className="block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    style={{ marginBottom: '24px' }}
                   >
                     Bathroom Remodeling
                   </a>
@@ -98,6 +100,7 @@ export default function Navigation({
                     href="/services/general-construction" 
                     onClick={() => setIsMenuOpen(false)}
                     className="block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    style={{ marginBottom: '24px' }}
                   >
                     General Construction
                   </a>
@@ -105,6 +108,7 @@ export default function Navigation({
                     href="/services/room-additions" 
                     onClick={() => setIsMenuOpen(false)}
                     className="block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    style={{ marginBottom: '24px' }}
                   >
                     Room Additions
                   </a>
@@ -112,6 +116,7 @@ export default function Navigation({
                     href="/services/garage-conversion" 
                     onClick={() => setIsMenuOpen(false)}
                     className="block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    style={{ marginBottom: '24px' }}
                   >
                     Garage Conversion
                   </a>
@@ -119,6 +124,7 @@ export default function Navigation({
                     href="/services/attic-renovation" 
                     onClick={() => setIsMenuOpen(false)}
                     className="block text-white font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    style={{ marginBottom: '0' }}
                   >
                     Attic Renovation
                   </a>
@@ -130,11 +136,12 @@ export default function Navigation({
                 <h3 className="text-[#F8B702] text-xs sm:text-sm uppercase tracking-wider font-medium mb-2 lg:mb-12">
                   Company
                 </h3>
-                <div className="space-y-4 lg:space-y-6">
+                <div>
                   <a 
                     href="/about" 
                     onClick={() => setIsMenuOpen(false)}
                     className="block text-white font-bold text-base sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    style={{ marginBottom: '24px' }}
                   >
                     About Us
                   </a>
@@ -142,6 +149,7 @@ export default function Navigation({
                     href="/portfolio" 
                     onClick={() => setIsMenuOpen(false)}
                     className="block text-white font-bold text-base sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    style={{ marginBottom: '24px' }}
                   >
                     Portfolio
                   </a>
@@ -149,6 +157,7 @@ export default function Navigation({
                     href="/contact" 
                     onClick={() => setIsMenuOpen(false)}
                     className="block text-white font-bold text-base sm:text-xl md:text-2xl lg:text-4xl hover:text-[#F8B702] transition-all duration-500 font-serif tracking-wide"
+                    style={{ marginBottom: '0' }}
                   >
                     Contact
                   </a>
