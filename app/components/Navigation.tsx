@@ -62,15 +62,15 @@ export default function Navigation({
 
       {/* Full Screen Menu */}
       {showMenu && isMenuOpen && (
-        <div className="fixed top-0 left-0 right-0 bottom-0 h-[100dvh] bg-black/95 backdrop-blur-sm z-50 flex flex-col">
+        <div className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 overflow-y-auto">
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="absolute top-6 right-6 text-white hover:text-[#F8B702] text-3xl font-light transition-colors duration-300 z-60"
+            className="fixed top-4 right-4 text-white hover:text-[#F8B702] text-2xl font-light transition-colors duration-300 z-60"
           >
             ×
           </button>
           
-          <div className="flex-1 flex items-start lg:items-center justify-center px-4 pt-20 lg:py-16 pb-4 overflow-y-auto">
+          <div className="min-h-screen flex items-center justify-center px-4 py-16">
             <div className="max-w-6xl mx-auto w-full">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-32">
               
