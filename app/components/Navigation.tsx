@@ -31,7 +31,7 @@ export default function Navigation({
             <img 
               src={`/images/branding/Levi-Homes_Logo-${logoColor === 'white' ? 'White' : 'Black'}.png`}
               alt="Levi Homes" 
-              className="h-20 md:h-24 w-auto"
+              className="h-16 sm:h-20 md:h-24 w-auto"
             />
           </a>
           <div className="flex items-center gap-8">
@@ -70,16 +70,16 @@ export default function Navigation({
             ×
           </button>
           
-          <div className="flex-1 flex items-center justify-center px-6 py-16 overflow-y-auto">
+          <div className="flex-1 flex items-center justify-center px-4 py-8 overflow-y-auto">
             <div className="max-w-6xl mx-auto w-full">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16">
               
               {/* Services Column */}
               <div className="text-center lg:text-left">
-                <h3 className="text-white/60 text-sm uppercase tracking-wider font-medium mb-8">
+                <h3 className="text-[#F8B702] text-sm uppercase tracking-wider font-medium mb-4">
                   Our Services
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-2">
                   <a 
                     href="/services/kitchen-remodeling" 
                     onClick={() => setIsMenuOpen(false)}
@@ -127,10 +127,10 @@ export default function Navigation({
 
               {/* Company Column */}
               <div className="text-center lg:text-left">
-                <h3 className="text-white/60 text-sm uppercase tracking-wider font-medium mb-8">
+                <h3 className="text-[#F8B702] text-sm uppercase tracking-wider font-medium mb-4">
                   Company
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-2">
                   <a 
                     href="/about" 
                     onClick={() => setIsMenuOpen(false)}
