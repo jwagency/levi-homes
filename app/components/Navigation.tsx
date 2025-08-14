@@ -25,6 +25,33 @@ export default function Navigation({
 
   return (
     <>
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @media (max-width: 1023px) {
+            .mobile-menu-link {
+              margin-bottom: 24px !important;
+              padding: 12px 0 !important;
+              border-bottom: 2px solid rgba(248, 183, 2, 0.3) !important;
+            }
+            .mobile-menu-link-last {
+              margin-bottom: 0 !important;
+              padding: 12px 0 !important;
+              border-bottom: none !important;
+            }
+          }
+          @media (min-width: 1024px) {
+            .mobile-menu-link,
+            .mobile-menu-link-last {
+              margin-bottom: 1.5rem !important;
+              padding: 0 !important;
+              border-bottom: none !important;
+            }
+            .mobile-menu-link-last {
+              margin-bottom: 0 !important;
+            }
+          }
+        `
+      }} />
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm py-3 px-6">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <a href="/" className="hover:opacity-75 transition-opacity duration-300">
