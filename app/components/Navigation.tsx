@@ -70,7 +70,7 @@ export default function Navigation({
             ×
           </button>
           
-          <div className="flex-1 flex items-center justify-center px-4 py-8 overflow-y-auto">
+          <div className="flex-1 flex items-start justify-center px-4 pt-16 pb-8 overflow-y-auto">
             <div className="max-w-6xl mx-auto w-full">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16">
               
