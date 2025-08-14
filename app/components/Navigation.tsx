@@ -79,7 +79,7 @@ export default function Navigation({
                 <h3 className="text-[#F8B702] text-xs sm:text-sm uppercase tracking-wider font-medium mb-2 lg:mb-12">
                   Our Services
                 </h3>
-                <div className="space-y-0 lg:space-y-6">
+                <div className="space-y-4 lg:space-y-6">
                   <a 
                     href="/services/kitchen-remodeling" 
                     onClick={() => setIsMenuOpen(false)}
@@ -130,7 +130,7 @@ export default function Navigation({
                 <h3 className="text-[#F8B702] text-xs sm:text-sm uppercase tracking-wider font-medium mb-2 lg:mb-12">
                   Company
                 </h3>
-                <div className="space-y-0 lg:space-y-6">
+                <div className="space-y-4 lg:space-y-6">
                   <a 
                     href="/about" 
                     onClick={() => setIsMenuOpen(false)}
