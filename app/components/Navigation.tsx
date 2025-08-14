@@ -70,16 +70,16 @@ export default function Navigation({
             ×
           </button>
           
-          <div className="flex-1 flex items-start justify-center px-4 pt-16 pb-8 overflow-y-auto">
+          <div className="flex-1 flex items-start lg:items-center justify-center px-4 pt-16 lg:py-16 pb-8 overflow-y-auto">
             <div className="max-w-6xl mx-auto w-full">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-32">
               
               {/* Services Column */}
               <div className="text-center lg:text-left">
-                <h3 className="text-[#F8B702] text-sm uppercase tracking-wider font-medium mb-4">
+                <h3 className="text-[#F8B702] text-sm uppercase tracking-wider font-medium mb-4 lg:mb-12">
                   Our Services
                 </h3>
-                <div className="space-y-2">
+                <div className="space-y-2 lg:space-y-6">
                   <a 
                     href="/services/kitchen-remodeling" 
                     onClick={() => setIsMenuOpen(false)}
@@ -127,10 +127,10 @@ export default function Navigation({
 
               {/* Company Column */}
               <div className="text-center lg:text-left">
-                <h3 className="text-[#F8B702] text-sm uppercase tracking-wider font-medium mb-4">
+                <h3 className="text-[#F8B702] text-sm uppercase tracking-wider font-medium mb-4 lg:mb-12">
                   Company
                 </h3>
-                <div className="space-y-2">
+                <div className="space-y-2 lg:space-y-6">
                   <a 
                     href="/about" 
                     onClick={() => setIsMenuOpen(false)}
