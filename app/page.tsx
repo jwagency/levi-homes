@@ -421,7 +421,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section - Full Screen Video Background */}
-      <section ref={heroRef} className="relative h-screen w-full overflow-hidden">
+      <section ref={heroRef} className="relative h-[80vh] sm:h-screen w-full overflow-hidden">
         {/* Background Video */}
         <video
           ref={videoRef}
@@ -447,14 +447,13 @@ export default function Home() {
           </h1>
           <p 
             ref={subtitleRef}
-            className="font-sans text-xs sm:text-sm md:text-base text-white/80 tracking-wider uppercase font-medium max-w-xs sm:max-w-none mb-8"
+            className="font-sans text-lg md:text-xl text-white/80 leading-relaxed max-w-4xl mx-auto mb-8"
           >
-            Transform your home into a masterpiece with bespoke design, flawless craftsmanship, and timeless elegance<br />
-            crafted exclusively for Houston's most discerning homeowners.
+            Transform your home into a masterpiece with bespoke design, flawless craftsmanship, and timeless elegance crafted exclusively for Houston's most discerning homeowners.
           </p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 w-full -mx-4 sm:mx-0 px-4 sm:px-0">
             <a href="tel:+17139225715" className="bg-gradient-to-b from-[#F8B702] via-[#F8B702] to-[#E6A602] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#FFD700] hover:to-[#F8B702] hover:scale-105 shadow-lg shadow-black/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20 before:rounded-lg sm:before:rounded-xl w-full sm:w-[335px] text-center">
               <FontAwesomeIcon icon={faPhone} className="mr-2 fa-fw" />
               Call Us (713) 922-5715
@@ -820,7 +819,7 @@ export default function Home() {
 
           {/* Call to Action */}
           <div className="text-center mt-8 sm:mt-10 md:mt-12 relative z-20">
-            <div className="flex flex-col sm:flex-row gap-8 sm:gap-4 md:gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a href="tel:+17139225715" className="bg-gradient-to-b from-[#F8B702] via-[#F8B702] to-[#E6A602] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#FFD700] hover:to-[#F8B702] hover:scale-105 shadow-lg shadow-black/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20 before:rounded-lg sm:before:rounded-xl w-full sm:w-[335px] text-center">
                 <FontAwesomeIcon icon={faPhone} className="mr-2" />
                 Call Us (713) 922-5715
@@ -1122,10 +1121,10 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-start max-w-5xl mx-auto">
             
             {/* Left Column - Enhanced CTAs */}
-            <div className="flex flex-col items-center justify-center h-full space-y-6 sm:space-y-8 -mt-[175px]">
+            <div className="flex flex-col items-center justify-center h-full space-y-6 sm:space-y-8 mt-0 sm:-mt-[175px]">
               
               {/* Quick Contact Options */}
-              <div className="space-y-4 sm:space-y-6">
+              <div className="space-y-6 sm:space-y-8 mt-8 sm:mt-0 mb-8 sm:mb-0">
                 <div className="flex items-center space-x-3 sm:space-x-4 group cursor-pointer">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#F8B702] to-[#E6A602] rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-2xl group-hover:shadow-[#F8B702]/30 transition-all duration-300 group-hover:scale-110">
                     <FontAwesomeIcon icon={faPhone} className="text-black text-lg sm:text-xl" />

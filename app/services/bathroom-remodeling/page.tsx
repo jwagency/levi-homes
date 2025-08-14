@@ -44,7 +44,7 @@ export default function BathroomRemodeling() {
       <Navigation showMenu={true} textColor="text-black" />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative h-[70vh] bg-black text-white overflow-hidden pt-20">
+      <section ref={heroRef} className="relative h-[60vh] sm:h-[70vh] bg-black text-white overflow-hidden pt-20">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -65,7 +65,7 @@ export default function BathroomRemodeling() {
             </h1>
             <p 
               ref={subtitleRef}
-              className="font-sans text-xl md:text-2xl text-white/80 leading-relaxed max-w-3xl mx-auto mb-8"
+              className="font-sans text-lg md:text-xl text-white/80 leading-relaxed max-w-4xl mx-auto mb-8"
             >
               Create your personal sanctuary with luxury fixtures, premium finishes, and innovative design that transforms your bathroom into a spa-like retreat.
             </p>
@@ -238,7 +238,7 @@ export default function BathroomRemodeling() {
 
           {/* Call to Action */}
           <div className="text-center mt-8 sm:mt-10 md:mt-12 relative z-20">
-            <div className="flex flex-col sm:flex-row gap-8 sm:gap-4 md:gap-4 justify-center items-center sm:ml-2 md:ml-2">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center sm:ml-2 md:ml-2">
               <a href="tel:+17139225715" className="bg-gradient-to-b from-[#F8B702] via-[#F8B702] to-[#E6A602] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#FFD700] hover:to-[#F8B702] hover:scale-105 shadow-lg shadow-black/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20 before:rounded-lg sm:before:rounded-xl w-full sm:w-[335px] text-center">
                 <FontAwesomeIcon icon={faPhone} className="mr-2" />
                 Call Us (713) 922-5715
@@ -351,7 +351,7 @@ export default function BathroomRemodeling() {
           <p className="font-sans text-base sm:text-lg md:text-xl text-white/80 leading-relaxed mb-12 max-w-2xl mx-auto px-4 sm:px-0">
             Let's discuss your vision and create the bathroom of your dreams. Schedule your free consultation today.
           </p>
-          <div className="flex flex-col sm:flex-row gap-8 sm:gap-4 md:gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a href="tel:+17139225715" className="bg-gradient-to-b from-[#F8B702] via-[#F8B702] to-[#E6A602] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-medium text-base sm:text-lg transition-all duration-300 hover:from-[#FFD700] hover:to-[#F8B702] hover:scale-105 shadow-lg shadow-black/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20 before:rounded-lg sm:before:rounded-xl w-full sm:w-[335px] text-center">
               <FontAwesomeIcon icon={faPhone} className="mr-2" />
               Call Us (713) 922-5715

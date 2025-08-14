@@ -156,7 +156,7 @@ export default function Portfolio() {
       <Navigation showMenu={true} textColor="text-black" />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative h-[70vh] bg-black text-white overflow-hidden pt-20">
+      <section ref={heroRef} className="relative h-[60vh] sm:h-[70vh] bg-black text-white overflow-hidden pt-20">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -177,9 +177,9 @@ export default function Portfolio() {
             </h1>
             <p 
               ref={subtitleRef}
-              className="font-sans text-xl md:text-2xl text-white/80 leading-relaxed max-w-3xl mx-auto mb-8"
+              className="font-sans text-lg md:text-xl text-white/80 leading-relaxed max-w-3xl mx-auto mb-8"
             >
-              Explore our collection of luxury home transformations and discover the artistry behind each project.
+              Explore our curated collection of luxury home transformations showcasing exceptional craftsmanship and innovative design solutions.
             </p>
             
             {/* CTA Buttons */}

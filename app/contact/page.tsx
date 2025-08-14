@@ -47,7 +47,7 @@ export default function Contact() {
       <Navigation showMenu={true} textColor="text-black" />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative h-[70vh] bg-black text-white overflow-hidden pt-20">
+      <section ref={heroRef} className="relative h-[60vh] sm:h-[70vh] bg-black text-white overflow-hidden pt-20">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -68,9 +68,9 @@ export default function Contact() {
             </h1>
             <p 
               ref={subtitleRef}
-              className="font-sans text-xl md:text-2xl text-white/80 leading-relaxed max-w-3xl mx-auto mb-8"
+              className="font-sans text-lg md:text-xl text-white/80 leading-relaxed max-w-3xl mx-auto mb-8"
             >
-              Ready to transform your home? Get in touch with Houston's premier luxury remodeling experts.
+              Ready to transform your home into something extraordinary? Connect with Houston's premier luxury remodeling specialists today.
             </p>
             
             {/* CTA Buttons */}
@@ -108,8 +108,16 @@ export default function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-4 md:gap-4 mb-16">
             
             {/* Contact Us Card */}
-            <div className="process-step group cursor-pointer bg-black/80 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-[#F8B702]/50 transition-all duration-300 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-[#F8B702]/20 hover:bg-black/90">
-              <div className="flex flex-col items-center text-center">
+            <div className="process-step group cursor-pointer relative rounded-2xl p-8 transition-all duration-300 hover:scale-105 overflow-hidden">
+              {/* Background Image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: 'url(/images/showcase/neo-classic-tv-area-600x452.jpg)' }}
+              />
+              
+              {/* Dark Overlay */}
+              <div className="absolute inset-0 bg-black/85 group-hover:bg-black/90 transition-all duration-300" />
+              <div className="relative z-10 flex flex-col items-center text-center">
                 <div className="flex-shrink-0 mb-6">
                   <div className="w-20 h-20 bg-gradient-to-br from-[#FFD700] via-[#F8B702] to-[#D4A003] rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-105 shadow-inner shadow-black/10 border-2 border-[#FFE55C]/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/10 before:to-white/20 before:rounded-lg">
                     <FontAwesomeIcon icon={faPhone} className="text-white text-2xl drop-shadow-lg relative z-10" />
@@ -133,8 +141,16 @@ export default function Contact() {
             </div>
 
             {/* Location Card */}
-            <div className="process-step group cursor-pointer bg-black/80 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-[#F8B702]/50 transition-all duration-300 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-[#F8B702]/20 hover:bg-black/90">
-              <div className="flex flex-col items-center text-center">
+            <div className="process-step group cursor-pointer relative rounded-2xl p-8 transition-all duration-300 hover:scale-105 overflow-hidden">
+              {/* Background Image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: 'url(/images/showcase/ferris-1.jpg)' }}
+              />
+              
+              {/* Dark Overlay */}
+              <div className="absolute inset-0 bg-black/85 group-hover:bg-black/90 transition-all duration-300" />
+              <div className="relative z-10 flex flex-col items-center text-center">
                 <div className="flex-shrink-0 mb-6">
                   <div className="w-20 h-20 bg-gradient-to-br from-[#FFD700] via-[#F8B702] to-[#D4A003] rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-105 shadow-inner shadow-black/10 border-2 border-[#FFE55C]/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/10 before:to-white/20 before:rounded-lg">
                     <FontAwesomeIcon icon={faMapMarkerAlt} className="text-white text-2xl drop-shadow-lg relative z-10" />
@@ -159,8 +175,16 @@ export default function Contact() {
             </div>
 
             {/* Hours Card */}
-            <div className="process-step group cursor-pointer bg-black/80 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-[#F8B702]/50 transition-all duration-300 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-[#F8B702]/20 hover:bg-black/90">
-              <div className="flex flex-col items-center text-center">
+            <div className="process-step group cursor-pointer relative rounded-2xl p-8 transition-all duration-300 hover:scale-105 overflow-hidden">
+              {/* Background Image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: 'url(/images/showcase/5aa8034dea685964b380ef0a17bff7a6.jpg)' }}
+              />
+              
+              {/* Dark Overlay */}
+              <div className="absolute inset-0 bg-black/85 group-hover:bg-black/90 transition-all duration-300" />
+              <div className="relative z-10 flex flex-col items-center text-center">
                 <div className="flex-shrink-0 mb-6">
                   <div className="w-20 h-20 bg-gradient-to-br from-[#FFD700] via-[#F8B702] to-[#D4A003] rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-105 shadow-inner shadow-black/10 border-2 border-[#FFE55C]/30 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/10 before:to-white/20 before:rounded-lg">
                     <FontAwesomeIcon icon={faClock} className="text-white text-2xl drop-shadow-lg relative z-10" />
