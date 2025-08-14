@@ -27,27 +27,17 @@ export default function Navigation({
     <>
       <style dangerouslySetInnerHTML={{
         __html: `
-          @media (max-width: 1023px) {
-            .mobile-menu-link {
-              margin-bottom: 24px !important;
-              padding: 12px 0 !important;
-              border-bottom: 2px solid rgba(248, 183, 2, 0.3) !important;
-            }
-            .mobile-menu-link-last {
-              margin-bottom: 0 !important;
-              padding: 12px 0 !important;
-              border-bottom: none !important;
-            }
+          .mobile-menu-link {
+            margin-bottom: 16px !important;
+            display: block !important;
+          }
+          .mobile-menu-link-last {
+            margin-bottom: 0 !important;
+            display: block !important;
           }
           @media (min-width: 1024px) {
-            .mobile-menu-link,
-            .mobile-menu-link-last {
+            .mobile-menu-link {
               margin-bottom: 1.5rem !important;
-              padding: 0 !important;
-              border-bottom: none !important;
-            }
-            .mobile-menu-link-last {
-              margin-bottom: 0 !important;
             }
           }
         `
