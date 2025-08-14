@@ -189,7 +189,7 @@ export default function Contact() {
         {/* Full Width Background Image Section with Negative Margin */}
         <div className="relative h-[500px] -mt-48 w-full -mb-24">
           <img 
-            src="/images/showcase/ferris-1.jpg" 
+            src="/images/76775055_2493544957596427_6661751652011212800_n.jpg" 
             alt="Luxury Home Interior" 
             className="w-full h-full object-cover"
           />
